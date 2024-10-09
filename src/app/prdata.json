@@ -1,0 +1,2196 @@
+[
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-09-12T14:08:13Z",
+    "files": ["package.json", "yarn.lock"],
+    "title": "(BT-4514): up elliptic for security"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-09-04T14:48:14Z",
+    "files": [
+      "domain/commands/src/commands/wallet/DestroyBetterwayWalletCard.command.ts",
+      "domain/commands/src/commands/wallet/index.ts",
+      "domain/commands/src/usecases/wallet/DestroyBetterwayWalletCard.usecase.ts",
+      "domain/commands/src/usecases/wallet/index.ts",
+      "services/graphql-admin/src/mutation.ts",
+      "services/graphql-admin/templates/Mutation/destroyBetterwayWalletCard.ts"
+    ],
+    "title": "(BT-4431): add graphql-admin mutation, fix typo"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-09-04T12:28:10Z",
+    "files": [
+      "services/graphql-admin/src/list-company-dashboard-url.ts",
+      "services/personal-balance/src/adapter/expense.repository.ts",
+      "services/personal-balance/src/adapter/income.repository.ts",
+      "services/personal-balance/src/adapter/payout.repository.ts",
+      "services/personal-balance/src/adapter/personal-balance.repository.ts"
+    ],
+    "title": "(BT-4477): streamline repositories save method to reduce connection…"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-08-30T12:15:16Z",
+    "files": [".nvmrc"],
+    "title": "(BT-4466): attempt at fixing flakiness"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-08-26T16:11:10Z",
+    "files": [
+      "domain/commands/src/__tests__/wallet/DestroyBetterwayWalletCard.spec.ts",
+      "domain/commands/src/commands/wallet/DestroyBetterwayWalletCard.command.ts",
+      "domain/commands/src/usecases/wallet/DestroyBetterwayWalletCard.usecase.ts",
+      "tools/scripts/run-async-command/.gitignore",
+      "tools/scripts/run-async-command/commands/DestroyBetterwayWalletCard.ts",
+      "tools/scripts/run-async-command/commands/DestroyWalletCard.ts",
+      "tools/scripts/run-async-command/data/.gitkeep"
+    ],
+    "title": "(bt-4431): add DestroyWalletCard to the run async command …"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-08-26T14:13:00Z",
+    "files": [
+      "services/personal-balance/features/supports/personal-balance.world.ts",
+      "services/sync-beneficiaries/src/lambda/sync-beneficiary.ts"
+    ],
+    "title": "(fix): Service with AddWalletMetaCommandHandler not found"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-08-23T14:34:04Z",
+    "files": [
+      "services/personal-balance/features/supports/in-memory-personal-balance.repository.ts",
+      "services/personal-balance/serverless.yml",
+      "services/personal-balance/src/lambda/get-personal-balance.spec.ts",
+      "services/personal-balance/src/lambda/get-personal-balance.ts",
+      "services/personal-balance/src/usecases/get-personal-balance.spec.ts",
+      "services/personal-balance/src/usecases/get-personal-balance.ts",
+      "services/personal-balance/tsconfig.json"
+    ],
+    "title": "(BT-4091): implement lambda to query personal balance"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-08-20T09:48:23Z",
+    "files": [
+      "services/sync-beneficiaries/features/commentaires.feature",
+      "services/sync-beneficiaries/features/supports/general.steps.ts",
+      "services/sync-beneficiaries/src/__tests__/context/wallet.context.ts",
+      "services/sync-beneficiaries/src/__tests__/fakes/in-memory-wallet.repository.ts",
+      "services/sync-beneficiaries/src/__tests__/utils.ts",
+      "services/sync-beneficiaries/src/adapters/repositories/factories.ts",
+      "services/sync-beneficiaries/src/adapters/repositories/wallet/dynamodb-wallet.repository.spec.ts",
+      "services/sync-beneficiaries/src/adapters/repositories/wallet/dynamodb-wallet.repository.ts",
+      "services/sync-beneficiaries/src/adapters/sync-beneficiary-wallet.ts",
+      "services/sync-beneficiaries/src/domain/beneficiary-wallet.ts",
+      "services/sync-beneficiaries/src/domain/wallet/wallet.projection.ts",
+      "services/sync-beneficiaries/src/domain/wallet/wallet.ts",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.ts"
+    ],
+    "title": "(BT-4408): add update of the wallet meta when syncing beneficiaries"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-08-08T09:09:00Z",
+    "files": ["tools/scripts/aws-lambda-ips/parse-ips.mjs"],
+    "title": "(BT-4228): give a script to parse and format AWS ip ranges"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-08-07T09:15:29Z",
+    "files": ["services/command-worker/serverless.yml"],
+    "title": "(BT-4189): command worker maximumConcurrency to mitigate Throttling"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-08-06T09:13:04Z",
+    "files": [
+      "services/personal-balance/README.md",
+      "services/personal-balance/cucumber.json",
+      "services/personal-balance/esbuild-plugins.js",
+      "services/personal-balance/features/default-budget/debt-recovery.feature",
+      "services/personal-balance/features/default-budget/expenses.feature",
+      "services/personal-balance/features/default-budget/incomes.feature",
+      "services/personal-balance/features/default-budget/payout.feature",
+      "services/personal-balance/features/default-budget/personal-balance.feature",
+      "services/personal-balance/features/supports/general.steps.ts",
+      "services/personal-balance/features/supports/in-memory-personal-balance.repository.ts",
+      "services/personal-balance/features/supports/personal-balance.world.ts",
+      "services/personal-balance/jest.config.js",
+      "services/personal-balance/package.json",
+      "services/personal-balance/serverless.resources.yml",
+      "services/personal-balance/serverless.variables.yml",
+      "services/personal-balance/serverless.yml",
+      "services/personal-balance/src/adapter/personal-balance.repository.spec.ts",
+      "services/personal-balance/src/adapter/personal-balance.repository.ts",
+      "services/personal-balance/src/domain/event-store.ts",
+      "services/personal-balance/src/domain/personal-balance.projection.ts",
+      "services/personal-balance/src/domain/personal-balance.ts",
+      "services/personal-balance/tsconfig.json",
+      "yarn.lock"
+    ],
+    "title": "feat(BT-4090): Migration projection et regles metier solde perso"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-08-01T07:24:48Z",
+    "files": [
+      "services/sync-beneficiaries/features/solde-tout-compte/alter-past-date.feature",
+      "services/sync-beneficiaries/features/supports/period.steps.ts"
+    ],
+    "title": "(BT-3949): STC date can't be altered in the past."
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-07-31T12:54:19Z",
+    "files": [
+      "services/personal-balance/README.md",
+      "services/personal-balance/cucumber.json",
+      "services/personal-balance/esbuild-plugins.js",
+      "services/personal-balance/jest.config.js",
+      "services/personal-balance/package.json",
+      "services/personal-balance/serverless.resources.yml",
+      "services/personal-balance/serverless.variables.yml",
+      "services/personal-balance/serverless.yml",
+      "services/personal-balance/src/adapter/personal-balance.repository.spec.ts",
+      "services/personal-balance/src/adapter/personal-balance.repository.ts",
+      "services/personal-balance/src/domain/personal-balance.ts",
+      "services/personal-balance/tsconfig.json",
+      "yarn.lock"
+    ],
+    "title": "(BT-4078): Aggregate personal balance data and expose the business object"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-07-31T12:29:29Z",
+    "files": ["shared/core/src/utils.test.ts", "shared/core/src/utils.ts"],
+    "title": "fix(utils): convertDateToCalendarDate UTC and isCalendarDate"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-07-24T08:02:00Z",
+    "files": [
+      ".eslintignore",
+      ".vscode/launch.json",
+      ".vscode/settings.json",
+      "frontend/employee/src/pages/equipment/consent-widget.tsx",
+      "package.json",
+      "services/payslip-export/features/supports/beneficiary.steps.ts",
+      "services/sync-beneficiaries/features/solde-tout-compte.feature",
+      "services/sync-beneficiaries/features/supports/period.steps.ts",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.validator.ts"
+    ],
+    "title": "feat(BT-3947): sync-benef - add STC on most recent activation date"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-07-17T07:11:00Z",
+    "files": [
+      "domain/aggregates/src/wallet/events/WalletCardDestroyed.event.ts",
+      "domain/aggregates/src/wallet/events/index.ts"
+    ],
+    "title": "(BT-2236): add the WalletCardDestroyedEvent"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-07-09T07:43:38Z",
+    "files": [
+      "services/payslip-export/src/config/config.ts",
+      "services/payslip-export/src/lambda/list-companies.ts",
+      "services/payslip-export/src/usecases/list-companies.ts"
+    ],
+    "title": "Bt 3954"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-07-01T08:04:06Z",
+    "files": [
+      "domain/commands/.vscode/event.code-snippets",
+      "domain/commands/src/__tests__/wallet/ResendInvitationNotOnboardedWallet.test.ts",
+      "services/company-configuration/src/adapters/company-configuration.repository.spec.ts",
+      "services/sync-beneficiaries/features/multiple-lignes-par-fichier.feature",
+      "services/sync-beneficiaries/features/solde-tout-compte.feature",
+      "services/sync-beneficiaries/features/supports/general.steps.ts",
+      "services/sync-beneficiaries/features/supports/period.steps.ts",
+      "services/sync-beneficiaries/src/__tests__/context/user.context.ts",
+      "services/sync-beneficiaries/src/__tests__/context/wallet.context.ts",
+      "services/sync-beneficiaries/src/__tests__/sync-beneficiaries.world.ts",
+      "services/sync-beneficiaries/src/__tests__/utils.ts",
+      "services/sync-beneficiaries/src/adapters/date-reviver.ts",
+      "services/sync-beneficiaries/src/adapters/repositories/factories.ts",
+      "services/sync-beneficiaries/src/adapters/repositories/wallet/dynamodb-wallet.repository.spec.ts",
+      "services/sync-beneficiaries/src/adapters/repositories/wallet/dynamodb-wallet.repository.ts",
+      "services/sync-beneficiaries/src/adapters/sync-beneficiary-wallet.ts",
+      "services/sync-beneficiaries/src/domain/beneficiary-wallet.ts",
+      "services/sync-beneficiaries/src/domain/wallet/wallet.projection.spec.ts",
+      "services/sync-beneficiaries/src/domain/wallet/wallet.projection.ts",
+      "services/sync-beneficiaries/src/domain/wallet/wallet.ts",
+      "services/sync-beneficiaries/src/usecases/split-by-beneficiary.spec.ts",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.ts",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.validator.ts",
+      "services/treezor-sync/src/utils/constants.util.ts",
+      "services/treezor-sync/src/utils/date.util.ts",
+      "shared/core/src/utils.test.ts",
+      "shared/core/src/utils.ts",
+      "shared/factories/src/wallet/wallet.factories.ts",
+      "tools/jest-mocks/src/cqrs.ts"
+    ],
+    "title": "(BT-3695): Sync-Beneficiaries, 📅 Date ⇒ CalendarDate"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-06-24T13:12:27Z",
+    "files": [],
+    "title": "(BT-3695): Change Date to CalendarDate in Import RH"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-06-13T14:56:42Z",
+    "files": [
+      "frontend/admin/public/locales/en/company.json",
+      "frontend/admin/public/locales/fr/company.json",
+      "frontend/admin/src/components/company/CompanyFormItems.tsx",
+      "frontend/admin/src/components/company/InfoForm.tsx",
+      "frontend/admin/src/hooks/company/company.graphql",
+      "frontend/admin/src/pages/settings/view.tsx"
+    ],
+    "title": "(BT-3712): display universe in company super admin informations"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-06-12T08:30:35Z",
+    "files": [
+      "tools/scripts/company-to-arval/.env.template",
+      "tools/scripts/company-to-arval/.gitignore",
+      "tools/scripts/company-to-arval/README.md",
+      "tools/scripts/company-to-arval/data/.gitkeep",
+      "tools/scripts/company-to-arval/package.json",
+      "tools/scripts/company-to-arval/src/conf-arval.ts",
+      "tools/scripts/company-to-arval/src/parse-file.ts",
+      "tools/scripts/company-to-arval/src/send-command.ts",
+      "tools/scripts/company-to-arval/tsconfig.json"
+    ],
+    "title": "(BT-3757): script to record Arval universe"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-06-05T10:16:22Z",
+    "files": [
+      "services/graphql/features/default-budget/debt-recovery.feature",
+      "services/graphql/features/default-budget/default-budget.feature",
+      "services/graphql/features/supports/default-budget.world.ts",
+      "services/graphql/features/supports/general.steps.ts",
+      "services/graphql/src/wallet-default-budget/wallet-default-budget-interface.ts",
+      "services/graphql/src/wallet-default-budget/wallet-default-budget.projectionV2.ts"
+    ],
+    "title": "(BT-3429): Default Budget : Tester les reprises sur paie"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-06-04T14:07:40Z",
+    "files": [
+      "services/treezor-sync/src/models/companyPerson-user/__test__/__snapshots__/companyPerson-user.projection.test.ts.snap",
+      "services/treezor-sync/src/models/companyPerson-user/__test__/companyPerson-user.projection.test.ts",
+      "services/treezor-sync/src/models/companyPerson-user/companyPerson-user.service.ts",
+      "services/treezor-sync/src/projection.ts",
+      "services/treezor-sync/src/services/__test__/treezor-tax-residence.spec.ts",
+      "services/treezor-sync/src/services/treezor-tax-residence.service.ts"
+    ],
+    "title": "(BT-3355): send CompanyPerson information to Treezor taxResidences"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-05-28T07:59:26Z",
+    "files": [
+      "adapters/aws/src/dynamodb/aggregate-locker.ts",
+      "adapters/local/src/logging-service.ts",
+      "services/intercom/src/index.ts",
+      "shared/core/package.json",
+      "shared/core/src/utils.ts"
+    ],
+    "title": "(BT-3513): add validation to process.env"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-05-24T13:44:15Z",
+    "files": ["services/cards/serverless.yml"],
+    "title": "(BT-3536): bump node16 to node18 for service cards"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-05-24T13:18:08Z",
+    "files": [
+      "cypress/README.md",
+      "cypress/cypress/e2e/admin/exportsPaie.cy.ts",
+      "cypress/cypress/support/selectors/adminSelectors.ts",
+      "frontend/admin/src/components/payslip-exports/PayslipExportsTable.tsx",
+      "frontend/admin/src/layout/LayoutSider.tsx",
+      "frontend/admin/src/pages/exports/view.tsx",
+      "frontend/admin/src/pages/iban/view.tsx"
+    ],
+    "title": "(BT-3472): remove pay export restriction for admin "
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-05-15T12:29:15Z",
+    "files": [
+      "tools/scripts/run-async-command/README.md",
+      "tools/scripts/run-async-command/commands/expireCardTransaction.ts",
+      "tools/scripts/run-async-command/run-async-commands.ts"
+    ],
+    "title": "(BT-3420): add marshaller to format csv line into command payload"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-05-15T09:13:09Z",
+    "files": [
+      "services/graphql/features/default-budget.feature",
+      "services/graphql/features/supports/default-budget.world.ts",
+      "services/graphql/features/supports/general.steps.ts"
+    ],
+    "title": "(BT-3430): projection personal balance"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-05-13T13:40:12Z",
+    "files": [
+      "frontend/admin/.env",
+      "frontend/admin/package.json",
+      "frontend/admin/public/android-icon-144x144.png",
+      "frontend/admin/public/android-icon-192x192.png",
+      "frontend/admin/public/android-icon-36x36.png",
+      "frontend/admin/public/android-icon-48x48.png",
+      "frontend/admin/public/android-icon-72x72.png",
+      "frontend/admin/public/android-icon-96x96.png",
+      "frontend/admin/public/apple-icon-114x114.png",
+      "frontend/admin/public/apple-icon-120x120.png",
+      "frontend/admin/public/apple-icon-144x144.png",
+      "frontend/admin/public/apple-icon-152x152.png",
+      "frontend/admin/public/apple-icon-180x180.png",
+      "frontend/admin/public/apple-icon-57x57.png",
+      "frontend/admin/public/apple-icon-60x60.png",
+      "frontend/admin/public/apple-icon-72x72.png",
+      "frontend/admin/public/apple-icon-76x76.png",
+      "frontend/admin/public/apple-icon-precomposed.png",
+      "frontend/admin/public/apple-icon.png",
+      "frontend/admin/public/browserconfig.xml",
+      "frontend/admin/public/default/README.md",
+      "frontend/admin/public/default/android-chrome-144x144.png",
+      "frontend/admin/public/default/android-chrome-192x192.png",
+      "frontend/admin/public/default/android-chrome-256x256.png",
+      "frontend/admin/public/default/android-chrome-36x36.png",
+      "frontend/admin/public/default/android-chrome-384x384.png",
+      "frontend/admin/public/default/android-chrome-48x48.png",
+      "frontend/admin/public/default/android-chrome-512x512.png",
+      "frontend/admin/public/default/android-chrome-72x72.png",
+      "frontend/admin/public/default/android-chrome-96x96.png",
+      "frontend/admin/public/default/apple-touch-icon.png",
+      "frontend/admin/public/default/browserconfig.xml",
+      "frontend/admin/public/default/favicon-16x16.png",
+      "frontend/admin/public/default/favicon-32x32.png",
+      "frontend/admin/public/default/favicon.ico",
+      "frontend/admin/public/default/faviconData.json",
+      "frontend/admin/public/default/html_code.html",
+      "frontend/admin/public/default/mstile-144x144.png",
+      "frontend/admin/public/default/mstile-150x150.png",
+      "frontend/admin/public/default/mstile-310x150.png",
+      "frontend/admin/public/default/mstile-310x310.png",
+      "frontend/admin/public/default/mstile-70x70.png",
+      "frontend/admin/public/default/picto.svg",
+      "frontend/admin/public/default/safari-pinned-tab.svg",
+      "frontend/admin/public/default/site.webmanifest",
+      "frontend/admin/public/favicon-16x16.png",
+      "frontend/admin/public/favicon-32x32.png",
+      "frontend/admin/public/favicon-96x96.png",
+      "frontend/admin/public/favicon.ico",
+      "frontend/admin/public/index.html",
+      "frontend/admin/public/ms-icon-144x144.png",
+      "frontend/admin/public/ms-icon-150x150.png",
+      "frontend/admin/public/ms-icon-310x310.png",
+      "frontend/admin/public/ms-icon-70x70.png",
+      "frontend/admin/serverless.yml",
+      "frontend/employee/.env",
+      "frontend/employee/.env.template",
+      "frontend/employee/public/android-icon-144x144.png",
+      "frontend/employee/public/android-icon-192x192.png",
+      "frontend/employee/public/android-icon-36x36.png",
+      "frontend/employee/public/android-icon-48x48.png",
+      "frontend/employee/public/android-icon-72x72.png",
+      "frontend/employee/public/android-icon-96x96.png",
+      "frontend/employee/public/apple-icon-114x114.png",
+      "frontend/employee/public/apple-icon-120x120.png",
+      "frontend/employee/public/apple-icon-144x144.png",
+      "frontend/employee/public/apple-icon-152x152.png",
+      "frontend/employee/public/apple-icon-180x180.png",
+      "frontend/employee/public/apple-icon-57x57.png",
+      "frontend/employee/public/apple-icon-60x60.png",
+      "frontend/employee/public/apple-icon-72x72.png",
+      "frontend/employee/public/apple-icon-76x76.png",
+      "frontend/employee/public/apple-icon-precomposed.png",
+      "frontend/employee/public/apple-icon.png",
+      "frontend/employee/public/browserconfig.xml",
+      "frontend/employee/public/dev/android-icon-144x144.png",
+      "frontend/employee/public/dev/android-icon-192x192.png",
+      "frontend/employee/public/dev/android-icon-36x36.png",
+      "frontend/employee/public/dev/android-icon-48x48.png",
+      "frontend/employee/public/dev/android-icon-72x72.png",
+      "frontend/employee/public/dev/android-icon-96x96.png",
+      "frontend/employee/public/dev/apple-icon-114x114.png",
+      "frontend/employee/public/dev/apple-icon-120x120.png",
+      "frontend/employee/public/dev/apple-icon-144x144.png",
+      "frontend/employee/public/dev/apple-icon-152x152.png",
+      "frontend/employee/public/dev/apple-icon-180x180.png",
+      "frontend/employee/public/dev/apple-icon-57x57.png",
+      "frontend/employee/public/dev/apple-icon-60x60.png",
+      "frontend/employee/public/dev/apple-icon-72x72.png",
+      "frontend/employee/public/dev/apple-icon-76x76.png",
+      "frontend/employee/public/dev/apple-icon-precomposed.png",
+      "frontend/employee/public/dev/apple-icon.png",
+      "frontend/employee/public/dev/favicon-32x32.png",
+      "frontend/employee/public/dev/favicon-96x96.png",
+      "frontend/employee/public/dev/favicon.ico",
+      "frontend/employee/public/dev/manifest.json",
+      "frontend/employee/public/dev/ms-icon-144x144.png",
+      "frontend/employee/public/dev/ms-icon-150x150.png",
+      "frontend/employee/public/dev/ms-icon-310x310.png",
+      "frontend/employee/public/dev/ms-icon-70x70.png"
+    ],
+    "title": "feat(BT-3548): optimise favicon and add arval dev domain"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-05-07T07:54:13Z",
+    "files": [
+      "frontend/admin/public/arval/README.md",
+      "frontend/admin/public/arval/android-chrome-144x144.png",
+      "frontend/admin/public/arval/android-chrome-192x192.png",
+      "frontend/admin/public/arval/android-chrome-256x256.png",
+      "frontend/admin/public/arval/android-chrome-36x36.png",
+      "frontend/admin/public/arval/android-chrome-384x384.png",
+      "frontend/admin/public/arval/android-chrome-48x48.png",
+      "frontend/admin/public/arval/android-chrome-72x72.png",
+      "frontend/admin/public/arval/android-chrome-96x96.png",
+      "frontend/admin/public/arval/apple-touch-icon.png",
+      "frontend/admin/public/arval/browserconfig.xml",
+      "frontend/admin/public/arval/favicon-16x16.png",
+      "frontend/admin/public/arval/favicon-32x32.png",
+      "frontend/admin/public/arval/favicon.ico",
+      "frontend/admin/public/arval/faviconData.json",
+      "frontend/admin/public/arval/html_code.html",
+      "frontend/admin/public/arval/mstile-144x144.png",
+      "frontend/admin/public/arval/mstile-150x150.png",
+      "frontend/admin/public/arval/mstile-310x150.png",
+      "frontend/admin/public/arval/mstile-310x310.png",
+      "frontend/admin/public/arval/mstile-70x70.png",
+      "frontend/admin/public/arval/picto.png",
+      "frontend/admin/public/arval/safari-pinned-tab.svg",
+      "frontend/admin/public/arval/site.webmanifest",
+      "frontend/admin/public/index.html",
+      "frontend/employee/.vscode/settings.json",
+      "frontend/employee/public/arval/README.md",
+      "frontend/employee/public/arval/android-chrome-144x144.png",
+      "frontend/employee/public/arval/android-chrome-192x192.png",
+      "frontend/employee/public/arval/android-chrome-256x256.png",
+      "frontend/employee/public/arval/android-chrome-36x36.png",
+      "frontend/employee/public/arval/android-chrome-384x384.png",
+      "frontend/employee/public/arval/android-chrome-48x48.png",
+      "frontend/employee/public/arval/android-chrome-72x72.png",
+      "frontend/employee/public/arval/android-chrome-96x96.png",
+      "frontend/employee/public/arval/apple-touch-icon.png",
+      "frontend/employee/public/arval/browserconfig.xml",
+      "frontend/employee/public/arval/favicon-16x16.png",
+      "frontend/employee/public/arval/favicon-32x32.png",
+      "frontend/employee/public/arval/favicon.ico",
+      "frontend/employee/public/arval/faviconData.json",
+      "frontend/employee/public/arval/html_code.html",
+      "frontend/employee/public/arval/mstile-144x144.png",
+      "frontend/employee/public/arval/mstile-150x150.png",
+      "frontend/employee/public/arval/mstile-310x150.png",
+      "frontend/employee/public/arval/mstile-310x310.png",
+      "frontend/employee/public/arval/mstile-70x70.png",
+      "frontend/employee/public/arval/picto.png",
+      "frontend/employee/public/arval/safari-pinned-tab.svg",
+      "frontend/employee/public/arval/site.webmanifest",
+      "frontend/employee/public/default/README.md",
+      "frontend/employee/public/default/android-chrome-144x144.png",
+      "frontend/employee/public/default/android-chrome-192x192.png",
+      "frontend/employee/public/default/android-chrome-256x256.png",
+      "frontend/employee/public/default/android-chrome-36x36.png",
+      "frontend/employee/public/default/android-chrome-384x384.png",
+      "frontend/employee/public/default/android-chrome-48x48.png",
+      "frontend/employee/public/default/android-chrome-512x512.png",
+      "frontend/employee/public/default/android-chrome-72x72.png",
+      "frontend/employee/public/default/android-chrome-96x96.png",
+      "frontend/employee/public/default/apple-touch-icon.png",
+      "frontend/employee/public/default/browserconfig.xml",
+      "frontend/employee/public/default/favicon-16x16.png",
+      "frontend/employee/public/default/favicon-32x32.png",
+      "frontend/employee/public/default/favicon.ico",
+      "frontend/employee/public/default/faviconData.json",
+      "frontend/employee/public/default/html_code.html",
+      "frontend/employee/public/default/mstile-144x144.png",
+      "frontend/employee/public/default/mstile-150x150.png",
+      "frontend/employee/public/default/mstile-310x150.png",
+      "frontend/employee/public/default/mstile-310x310.png",
+      "frontend/employee/public/default/mstile-70x70.png",
+      "frontend/employee/public/default/picto.svg",
+      "frontend/employee/public/default/safari-pinned-tab.svg",
+      "frontend/employee/public/default/site.webmanifest",
+      "frontend/employee/public/index.html",
+      "services/sso/public/arval/README.md",
+      "services/sso/public/arval/android-chrome-144x144.png",
+      "services/sso/public/arval/android-chrome-192x192.png",
+      "services/sso/public/arval/android-chrome-256x256.png",
+      "services/sso/public/arval/android-chrome-36x36.png",
+      "services/sso/public/arval/android-chrome-384x384.png",
+      "services/sso/public/arval/android-chrome-48x48.png",
+      "services/sso/public/arval/android-chrome-72x72.png",
+      "services/sso/public/arval/android-chrome-96x96.png",
+      "services/sso/public/arval/apple-touch-icon.png",
+      "services/sso/public/arval/browserconfig.xml",
+      "services/sso/public/arval/favicon-16x16.png",
+      "services/sso/public/arval/favicon-32x32.png",
+      "services/sso/public/arval/favicon.ico",
+      "services/sso/public/arval/faviconData.json",
+      "services/sso/public/arval/html_code.html",
+      "services/sso/public/arval/logo.svg",
+      "services/sso/public/arval/mstile-144x144.png",
+      "services/sso/public/arval/mstile-150x150.png",
+      "services/sso/public/arval/mstile-310x150.png",
+      "services/sso/public/arval/mstile-310x310.png",
+      "services/sso/public/arval/mstile-70x70.png",
+      "services/sso/public/arval/picto.png",
+      "services/sso/public/arval/safari-pinned-tab.svg"
+    ],
+    "title": "(BT-3548): alter title and favicon for arval theming"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-04-24T14:26:24Z",
+    "files": [
+      ".vscode/settings.json",
+      "services/sync-beneficiaries/serverless.yml",
+      "services/sync-beneficiaries/src/lambda/generate-sync-beneficiaries-report.ts",
+      "services/sync-beneficiaries/src/usecases/generate-sync-beneficiaries-report.ts"
+    ],
+    "title": "(BT-3416): fix report sending on tech error while sync beneficiaries"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-04-22T12:28:47Z",
+    "files": [
+      "services/sso/arval.tailwind.colors.js",
+      "services/sso/default.tailwind.colors.js",
+      "services/sso/postcss.config.js",
+      "services/sso/public/styles/tailwind.css",
+      "services/sso/src/configuration/configurators/middlewares.configurator.ts",
+      "services/sso/tailwind.config.js",
+      "services/sso/views/layout.hbs"
+    ],
+    "title": "fix(BT-3433): switch between arval and betterway theme on sso"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-04-19T14:08:20Z",
+    "files": [
+      "services/sso/arval.tailwind.colors.js",
+      "services/sso/default.tailwind.colors.js",
+      "services/sso/public/styles/tailwind.css",
+      "services/sso/serverless.yml",
+      "services/sso/tailwind.config.js",
+      "yarn.lock"
+    ],
+    "title": "feat(BT-3433): change tailwind preset given the THEME_NAME"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-04-16T07:32:39Z",
+    "files": [
+      "frontend/admin/package.json",
+      "frontend/admin/public/locales/fr/dashboard.json",
+      "frontend/admin/src/App.tsx",
+      "frontend/admin/src/Dashboard.tsx",
+      "frontend/admin/src/context/ConfigCatUser.tsx",
+      "frontend/admin/src/hoc/WithPermissionControl.tsx",
+      "frontend/admin/src/index.tsx",
+      "frontend/admin/src/pages/index.tsx",
+      "frontend/admin/src/utils/csv/parseCsv.ts",
+      "frontend/admin/src/utils/csv/parseUsersCsv.ts",
+      "frontend/employee/package.json",
+      "frontend/employee/src/index.tsx",
+      "frontend/react-auth/package.json",
+      "services/eventbus/src/migrate.ts",
+      "services/treezor-sync/src/models/walletCard-card/card.repository.ts",
+      "yarn.lock"
+    ],
+    "title": "feat(BT-2180): use ConfigCat featureflag for access"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-04-10T08:00:31Z",
+    "files": [
+      "domain/commands/src/__tests__/user/ResendInvitationNotOnboarded.test.ts",
+      "domain/commands/src/usecases/wallet/ResendInvitationNotOnboarded.usecase.ts",
+      "yarn.lock"
+    ],
+    "title": "Feat(BT-3393) : allow to re-send invitation"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-04-05T07:27:14Z",
+    "files": [
+      "tools/scripts/sync-old-cards/.gitignore",
+      "tools/scripts/sync-old-cards/01-sync-old-cards.ts",
+      "tools/scripts/sync-old-cards/README.md",
+      "tools/scripts/sync-old-cards/package.json",
+      "yarn.lock"
+    ],
+    "title": "feat(BT-2246): script to change status of cards"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-03-12T13:49:04Z",
+    "files": [
+      "domain/aggregates/src/wallet/Wallet.ts",
+      "domain/commands/src/commands/wallet/ExpireCardTransaction.command.ts",
+      "domain/commands/src/usecases/wallet/ExpireCardTransaction.usecase.ts",
+      "services/treezor-sync/serverless.yml",
+      "services/treezor-sync/src/expire-transactions.ts",
+      "services/treezor-sync/src/models/walletCard-card/__test__/card.projection.test.ts",
+      "services/treezor-sync/src/models/walletCard-card/card.repository.ts",
+      "services/treezor-sync/src/transaction-authorization-expiration/payment-transaction.projection.spec.ts",
+      "services/treezor-sync/src/transaction-authorization-expiration/payment-transaction.projection.ts",
+      "services/treezor-sync/src/transaction-authorization-expiration/payment-transaction.repository.ts",
+      "services/treezor-sync/src/usecases/expire-transactions.spec.ts",
+      "services/treezor-sync/src/usecases/expire-transactions.ts",
+      "services/treezor-sync/src/utils/MockClock.ts",
+      "services/treezor-sync/src/utils/constants.util.ts",
+      "services/treezor-sync/src/utils/date.util.spec.ts",
+      "services/treezor-sync/src/utils/date.util.ts",
+      "services/treezor-sync/src/utils/distribute-lines.util.spec.ts",
+      "services/treezor-sync/src/utils/factories.ts",
+      "shared/factories/src/company/company.factories.ts"
+    ],
+    "title": "(BT-2144): Trigger commands to expire authorizations older than 10 days"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-03-08T11:20:39Z",
+    "files": [
+      "domain/aggregates/src/wallet/features/expiration-command.feature"
+    ],
+    "title": "feat(BT-1558): final"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-03-06T16:12:18Z",
+    "files": [
+      "domain/aggregates/src/wallet/Wallet.ts",
+      "domain/aggregates/src/wallet/WalletCard.test.ts",
+      "domain/aggregates/src/wallet/WalletCard.ts",
+      "domain/aggregates/src/wallet/WalletPayment.ts",
+      "domain/aggregates/src/wallet/events/WalletPaymentTransactionAdded.event.ts",
+      "domain/aggregates/src/wallet/features/expiration-command.feature",
+      "domain/aggregates/src/wallet/stepdefinitions/Wallet.step.ts",
+      "domain/aggregates/src/wallet/stepdefinitions/WalletCard.step.ts",
+      "domain/aggregates/src/wallet/stepdefinitions/WalletPayment.step.ts",
+      "domain/commands/src/usecases/wallet/AddCardTransaction.usecase.ts"
+    ],
+    "title": "feat(BT-1558): expire autorisations"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-03-01T16:53:19Z",
+    "files": [
+      "tools/scripts/prefix-registration-number-with-zeros/.gitignore",
+      "tools/scripts/prefix-registration-number-with-zeros/01-find-wallets.ts",
+      "tools/scripts/prefix-registration-number-with-zeros/data/entites.csv.template"
+    ],
+    "title": "feat(BT-2102): reorganize and add triming"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-29T09:58:24Z",
+    "files": [
+      ".github/workflows/dev_workflow.yml",
+      ".github/workflows/nightly_workflow.yml"
+    ],
+    "title": "fix(github): from 4 cores 16go to 8 32go"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-23T10:19:27Z",
+    "files": [
+      "frontend/employee/src/components/transactions/MobileTransactionListItemVentilation.tsx",
+      "services/sync-beneficiaries/features/fin-de-periode-d-eligibilite.feature",
+      "services/sync-beneficiaries/features/fin-de-periode-d-elligibilite-modifiable-avant-import.feature",
+      "services/sync-beneficiaries/features/multiple-lignes-par-fichier.feature",
+      "services/sync-beneficiaries/features/periode-eligibilite.feature",
+      "services/sync-beneficiaries/features/supports/general.steps.ts",
+      "services/sync-beneficiaries/src/domain/business-errors.ts",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.ts",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.validator.ts",
+      "tools/jest-mocks/src/cqrs.ts"
+    ],
+    "title": "feat(BT-1894): multiple activity periods in a single import"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-19T11:08:27Z",
+    "files": [
+      "services/sync-beneficiaries/serverless.variables.yml",
+      "services/sync-beneficiaries/serverless.yml"
+    ],
+    "title": "(BT-1940): date de fin 42 jours glissants (fix env var)"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-16T11:18:20Z",
+    "files": [
+      "services/sync-beneficiaries/features/fin-de-periode-d-eligibilite.feature",
+      "services/sync-beneficiaries/features/fin-de-periode-d-elligibilite-modifiable-avant-import.feature",
+      "services/sync-beneficiaries/features/supports/period.steps.ts",
+      "services/sync-beneficiaries/src/__tests__/sync-beneficiaries.world.ts",
+      "services/sync-beneficiaries/src/__tests__/utils.ts",
+      "services/sync-beneficiaries/src/config/config.ts",
+      "services/sync-beneficiaries/src/domain/business-errors.ts",
+      "services/sync-beneficiaries/src/lambda/sync-beneficiary.ts",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.validator.ts"
+    ],
+    "title": "(Bt-1940): date de fin 42 jours glissants"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-13T17:20:14Z",
+    "files": ["README.md", "yarn.lock"],
+    "title": "(BT-1884): improve README flow"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-12T15:58:14Z",
+    "files": [
+      "frontend/employee/src/hooks/beetogreen/useBeetogreenUser.ts",
+      "frontend/employee/src/hooks/utm-tags/useUTMTags.ts",
+      "frontend/employee/src/pages/equipment/consent-modal.tsx",
+      "frontend/employee/src/pages/equipment/partner-iframe.tsx"
+    ],
+    "title": "(BT-1512): forward utm tags to partner"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-08T10:27:13Z",
+    "files": ["services/treezor-sync/src/webhooks/webhooks.handler.ts"],
+    "title": "fix(BT-1928): Treezor webhook - use personalIbanRepository to get walletId"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-06T14:13:33Z",
+    "files": [
+      "services/assets/serverless.yml",
+      "services/budget/serverless.yml",
+      "services/cardauthorizer/serverless.yml",
+      "services/cards/serverless.yml",
+      "services/command-worker/serverless.yml",
+      "services/company-configuration/serverless.yml",
+      "services/eventbus/serverless.yml",
+      "services/export/serverless.yml",
+      "services/graphql-admin/serverless.yml",
+      "services/graphql/serverless.yml",
+      "services/hipay/serverless.yml",
+      "services/intercom/serverless.yml",
+      "services/payslip-export/serverless.yml",
+      "services/sso/serverless.yml",
+      "services/statements/serverless.yml",
+      "services/sync-beneficiaries/serverless.yml",
+      "services/treezor-sync/serverless.yml"
+    ],
+    "title": "(BT-1867): DD_TRACE_SAMPLE_RATE: 0.33"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-06T08:57:15Z",
+    "files": [
+      "frontend/admin/src/hooks/wallet/paymentMethod/usePaymentMethod.ts"
+    ],
+    "title": "fix(BT-231): correct useHasWalletBeneficiary hook"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-02T16:22:38Z",
+    "files": [
+      "services/sync-beneficiaries/features/supports/report.steps.ts",
+      "services/sync-beneficiaries/src/usecases/generate-sync-beneficiaries-report.ts"
+    ],
+    "title": "hotfix(sync-beneficiaries): report header separators"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-02T15:33:11Z",
+    "files": [
+      "services/payslip-export/src/lambda/display-report.spec.ts",
+      "services/payslip-export/src/lambda/display-report.ts"
+    ],
+    "title": "(BT-1742): remove 0 values"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-02T15:30:43Z",
+    "files": [
+      "frontend/admin/src/components/employees/view/actions/ButtonCreatePayout.tsx",
+      "frontend/admin/src/hooks/wallet/useWalletPayout.ts"
+    ],
+    "title": "(BT-1901): refacto ButtonCreatePayout and useWalletPayout"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-02T13:14:19Z",
+    "files": ["frontend/admin/public/locales/fr/budget.json"],
+    "title": "fix(wording): topup"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-02T13:04:38Z",
+    "files": [
+      "frontend/admin/src/components/employees/view/actions/ButtonCreatePayout.tsx",
+      "frontend/admin/src/hooks/wallet/useWalletPayout.ts"
+    ],
+    "title": "BT(1901): refacto bouton payout use wallet payout"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-01T14:53:40Z",
+    "files": [
+      "services/sync-beneficiaries/features/supports/report.steps.ts",
+      "services/sync-beneficiaries/src/usecases/generate-sync-beneficiaries-report.ts"
+    ],
+    "title": "BT(1815): report tweaks"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-01T14:36:01Z",
+    "files": [
+      "frontend/admin/src/components/employees/view/actions/ButtonCreatePayout.tsx",
+      "frontend/admin/src/hooks/wallet/paymentMethod/usePaymentMethod.ts",
+      "frontend/admin/src/hooks/wallet/useWalletPayout.ts"
+    ],
+    "title": "BT(231): block payout when there is no beneficiary (front)"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-02-01T13:42:51Z",
+    "files": [
+      "domain/commands/src/__tests__/wallet/CreateWalletPayout.test.ts",
+      "domain/commands/src/usecases/wallet/CreateWalletPayout.usecase.ts"
+    ],
+    "title": "BT(231): block payout when there is no beneficiary (back)"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-25T08:46:43Z",
+    "files": [
+      "services/cards/src/adapters/treezor-adapter/treezor-http-cards.repository.spec.ts",
+      "services/cards/src/adapters/treezor-adapter/treezor-http-cards.repository.ts",
+      "yarn.lock"
+    ],
+    "title": "fix(BT-1814): take care of the 0 result scenario"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-24T15:54:53Z",
+    "files": [
+      "frontend/admin/public/locales/fr/budget.json",
+      "frontend/admin/src/components/employees/budget/BudgetTopUpCard.tsx"
+    ],
+    "title": "fix(wording): change topup term by something more correct"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-22T15:26:00Z",
+    "files": [
+      "services/sync-beneficiaries/src/adapters/email-report-sender.ts",
+      "services/sync-beneficiaries/src/usecases/generate-sync-beneficiaries-report.ts"
+    ],
+    "title": "fix(BT-1756): move report to mail attachment"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-19T16:10:29Z",
+    "files": [
+      "adapters/sendinblue/src/transactional-email.service.test.ts",
+      "adapters/sendinblue/src/transactional-email.service.ts",
+      "adapters/sendinblue/src/transactional-email.spec.ts",
+      "services/command-worker/src/command-worker.ts",
+      "services/command-worker/src/projection.ts",
+      "services/graphql-admin/src/mutation.ts",
+      "services/graphql-admin/src/projection.ts",
+      "services/graphql/src/mutation.ts",
+      "services/graphql/src/projection.ts",
+      "services/sso/src/configuration/config.ts",
+      "services/sso/src/handler.ts",
+      "services/sso/src/projection.ts",
+      "services/sync-beneficiaries/features/compte-rendu-integration.feature",
+      "services/sync-beneficiaries/features/fin-de-periode-d-eligibilite.feature",
+      "services/sync-beneficiaries/features/periode-eligibilite.feature",
+      "services/sync-beneficiaries/features/supports/report.steps.ts",
+      "services/sync-beneficiaries/features/unicite-beneficiaire-par-employe.feature",
+      "services/sync-beneficiaries/src/__tests__/fakes/fake-report-sender.ts",
+      "services/sync-beneficiaries/src/adapters/email-report-sender.ts",
+      "services/sync-beneficiaries/src/lambda/generate-sync-beneficiaries-report.ts",
+      "services/sync-beneficiaries/src/usecases/generate-sync-beneficiaries-report.ts",
+      "yarn.lock"
+    ],
+    "title": "(BT-1756): move report to mail attachment"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-16T14:43:39Z",
+    "files": [
+      ".watchmanconfig",
+      "betterway.code-workspace",
+      "services/eventbus/src/migrate.ts",
+      "services/slack/.vscode/launch.json",
+      "services/slack/README.md",
+      "services/slack/architecture.png",
+      "services/slack/esbuild-plugins.js",
+      "services/slack/jest.config.cjs",
+      "services/slack/package.json",
+      "services/slack/serverless.resources.yml",
+      "services/slack/serverless.variables.yml",
+      "services/slack/serverless.yml",
+      "services/slack/src/company/company.model.ts",
+      "services/slack/src/company/company.projection.test.ts",
+      "services/slack/src/company/company.projection.ts",
+      "services/slack/src/index.ts",
+      "services/slack/src/slack-adapter/adapter.ts",
+      "services/slack/src/user/user.model.ts",
+      "services/slack/src/user/user.projection.test.ts",
+      "services/slack/src/user/user.projection.ts",
+      "services/slack/src/utils/toolsForTest.ts",
+      "services/slack/src/wallet/wallet.model.ts",
+      "services/slack/src/wallet/wallet.projection.test.ts",
+      "services/slack/src/wallet/wallet.projection.ts",
+      "services/slack/tsconfig.json"
+    ],
+    "title": "clean(slack): delete the slack service"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-15T15:39:34Z",
+    "files": ["README.md"],
+    "title": "update(doc): \"Create a card transaction on DEV environment\""
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-10T08:59:32Z",
+    "files": [
+      "domain/aggregates/src/wallet/WalletCard.test.ts",
+      "domain/aggregates/src/wallet/WalletCard.ts",
+      "domain/aggregates/src/wallet/WalletIBAN.ts",
+      "domain/aggregates/src/wallet/WalletPayment.test.ts",
+      "domain/aggregates/src/wallet/events/WalletPaymentTransactionAdded.event.ts",
+      "domain/aggregates/src/wallet/stepdefinitions/WalletCard.step.ts",
+      "domain/commands/src/__tests__/merchant/CategorizeMerchant.test.ts",
+      "domain/commands/src/__tests__/wallet/AddCardTransaction.test.ts",
+      "domain/commands/src/commands/wallet/AddCardTransaction.command.ts",
+      "services/treezor-sync/src/models/viban/__test__/fixtures/viban.fixtures.ts",
+      "services/treezor-sync/src/webhook-http.ts",
+      "services/treezor-sync/src/webhooks/webhooks.handler.spec.ts",
+      "services/treezor-sync/src/webhooks/webhooks.handler.ts",
+      "shared/factories/src/wallet/wallet.factories.ts"
+    ],
+    "title": "(BT-1223): Récupération d'authorizationNote dans la commande et l'event"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-08T10:57:43Z",
+    "files": [
+      "services/cards/src/domain/service.ts",
+      "services/cards/src/lambda/container.ts",
+      "services/cards/src/usecases/fetch-all-companies-cards.spec.ts",
+      "services/cards/src/usecases/fetch-all-companies-cards.ts",
+      "services/cards/src/usecases/fetch-company-cards.spec.ts",
+      "services/cards/src/usecases/fetch-company-cards.ts"
+    ],
+    "title": "(Bt-1571): renaming"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-04T13:21:25Z",
+    "files": ["services/cards/src/lambda/container.ts"],
+    "title": "fix(cards): add missing dependency"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-04T10:26:10Z",
+    "files": [
+      "services/cards/src/adapters/company-wallet-id-link-repository/company-wallet-id-link-repository.spec.ts",
+      "services/cards/src/domain/company.ts",
+      "services/cards/src/lambda/container.ts",
+      "services/cards/src/lambda/projection.ts"
+    ],
+    "title": "fix(cards): rationalize container creation"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2024-01-02T09:09:23Z",
+    "files": ["services/cards/serverless.yml"],
+    "title": "BT(1185): fix rapide serverless"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-12-29T13:40:22Z",
+    "files": [
+      "cypress/cypress/e2e/admin/employeePage.cy.ts",
+      "cypress/cypress/e2e/admin/importRh.cy.ts",
+      "cypress/cypress/e2e/admin/onboardingUser.cy.ts",
+      "cypress/cypress/support/commands.ts",
+      "cypress/cypress/support/cypress.d.ts",
+      "frontend/admin_edge/package.json",
+      "frontend/employee_edge/package.json"
+    ],
+    "title": "feat(BT-1286): improvements on cypress tests"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-12-27T08:31:52Z",
+    "files": [
+      ".github/pull_request_template.md",
+      "services/cards/serverless.yml",
+      "services/cards/src/adapters/company-wallet-id-link-repository/__tests__/in-memory-company-wallet-id-link-repository.ts",
+      "services/cards/src/adapters/company-wallet-id-link-repository/company-wallet-id-link-repository.spec.ts",
+      "services/cards/src/adapters/company-wallet-id-link-repository/company-wallet-id-link.dto.ts",
+      "services/cards/src/adapters/company-wallet-id-link-repository/company-wallet-id-link.repository.ts",
+      "services/cards/src/adapters/company-wallet-id-link-repository/migrations/1703409587000_CreateCompanyWalletIDLink.ts",
+      "services/cards/src/adapters/company-wallet-id-link-repository/migrations/index.ts",
+      "services/cards/src/adapters/database-connection-config.ts",
+      "services/cards/src/domain/company.ts",
+      "services/cards/src/domain/factories.ts",
+      "services/cards/src/lambda/projection.ts",
+      "services/cards/src/migrations/migrations.ts"
+    ],
+    "title": "feat(BT-1185): add entity wallet id projection"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-12-08T05:58:36Z",
+    "files": [
+      "frontend/employee/src/hooks/beetogreen/beetogreen.graphql",
+      "frontend/employee/src/hooks/beetogreen/useBeetogreenUser.ts",
+      "services/graphql/graphql/User.graphql",
+      "services/graphql/src/beetogreen/__tests__/factories.ts",
+      "services/graphql/src/beetogreen/adapter/beetogreen.service.spec.ts",
+      "services/graphql/src/beetogreen/beetogreen.domain.ts",
+      "services/graphql/templates/User.beetogreenToken.req.vtl"
+    ],
+    "title": "feat(BT-1172): add tracking tags"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-12-05T13:03:17Z",
+    "files": [".github/PULL_REQUEST_TEMPLATE/pull_request_template.md"],
+    "title": "doc(all): add PR template"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-11-30T16:09:04Z",
+    "files": [
+      "services/statements/src/lambda/utils.test.ts",
+      "services/statements/src/lambda/utils.ts"
+    ],
+    "title": "fix(statements): fix SimpleDateFromStringSchema"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-11-29T08:48:54Z",
+    "files": [
+      "domain/aggregates/src/user/UserInvitation.ts",
+      "services/sync-beneficiaries/features/envoi-email-invitation.feature",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.ts"
+    ],
+    "title": "feat(BT-1041): Invitation nouveau wallet nouvelle entité ancien utilisateur"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-11-27T08:24:14Z",
+    "files": [
+      "services/sync-beneficiaries/features/unicite-beneficiaire-par-employe.feature",
+      "services/sync-beneficiaries/src/__tests__/fakes/in-memory-users.repository.ts",
+      "services/sync-beneficiaries/src/adapters/repositories/user/dynamodb-user.repository.spec.ts",
+      "services/sync-beneficiaries/src/adapters/repositories/user/dynamodb-user.repository.ts",
+      "services/sync-beneficiaries/src/domain/user/user.projection.spec.ts",
+      "services/sync-beneficiaries/src/lambda/sync-beneficiary.ts",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.validator.ts"
+    ],
+    "title": "(BT-1121): Rendre l'identification de l'adresse mail casse insensitive"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-11-23T13:47:35Z",
+    "files": [
+      "services/statements/src/__tests__/payin-strategy.spec.ts",
+      "services/statements/src/__tests__/steps.ts",
+      "services/statements/src/adapters/__tests__/in-memory-treezor-transaction.repository.ts",
+      "services/statements/src/adapters/treezor-adapters/treezor.transaction.repository.spec.ts",
+      "services/statements/src/adapters/treezor-adapters/treezor.transaction.repository.ts",
+      "services/statements/src/adapters/utils.ts",
+      "services/statements/src/domain/service/qualify-source-transaction-ids.ts",
+      "services/statements/src/domain/statement.ts",
+      "services/statements/src/domain/transaction.ts",
+      "services/statements/src/lambda/fetch-all-companies-statements.ts",
+      "services/statements/src/lambda/retrieve-statement-entries.ts",
+      "services/statements/src/lambda/utils.ts",
+      "services/statements/src/usecases/fetch-all-companies-statements.ts",
+      "services/statements/src/utils/index.ts",
+      "services/statements/src/utils/simpledate.ts",
+      "services/statements/src/utils/treezor-date-parser.ts"
+    ],
+    "title": "fix(BT-1085): statement, fix tz management"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-11-22T07:09:21Z",
+    "files": [
+      "services/statements/README.md",
+      "services/statements/architecture.png"
+    ],
+    "title": "doc(BT-762): improve statements service README + architecture diagram"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-11-15T15:35:02Z",
+    "files": [
+      "architecture diagram.drawio",
+      "services/company-configuration/README.md",
+      "services/company-configuration/architecture.png",
+      "services/graphql-admin/README.md",
+      "services/graphql-admin/architecture.png",
+      "services/payslip-export/README.md",
+      "services/payslip-export/architecture.png",
+      "services/slack/README.md",
+      "services/slack/architecture.png",
+      "services/sso/README.md",
+      "services/sso/architecture.png"
+    ],
+    "title": "doc(services): add description and architecture diagrams for more of …"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-11-13T09:17:34Z",
+    "files": [
+      "services/cards/.npmrc",
+      "services/cards/.nvmrc",
+      "services/cards/README.md",
+      "services/cards/cucumber.json",
+      "services/cards/esbuild-plugins.js",
+      "services/cards/jest.config.js",
+      "services/cards/package.json",
+      "services/cards/serverless.resources.yml",
+      "services/cards/serverless.variables.yml",
+      "services/cards/serverless.yml",
+      "services/cards/src/adapters/metabase/card.dto.ts",
+      "services/cards/src/adapters/metabase/cards.repository.spec.ts",
+      "services/cards/src/adapters/metabase/cards.repository.ts",
+      "services/cards/src/adapters/metabase/migrations/0000000000000_createTCardsTable.ts",
+      "services/cards/src/adapters/metabase/migrations/index.ts",
+      "services/cards/src/adapters/utils/DataSourceInitializer.ts",
+      "services/cards/src/adapters/utils/index.ts",
+      "services/cards/src/config.ts",
+      "services/cards/src/lambda/migrations.ts",
+      "services/cards/src/utils/eventually.monad.test.ts",
+      "services/cards/src/utils/eventually.monad.ts",
+      "services/cards/src/utils/functionComposition.test.ts",
+      "services/cards/src/utils/functionComposition.ts",
+      "services/cards/src/utils/index.ts",
+      "services/cards/src/utils/promise.monad.test.ts",
+      "services/cards/src/utils/promise.monad.ts",
+      "services/cards/src/utils/tests.steps.ts",
+      "services/cards/tsconfig.json",
+      "tsconfig.json",
+      "yarn.lock"
+    ],
+    "title": "Bt 928 static to metabase"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-30T11:34:51Z",
+    "files": [
+      "frontend/employee/src/hooks/company/useCompany.ts",
+      "services/statements/src/__tests__/factories.ts",
+      "services/statements/src/__tests__/steps.ts",
+      "services/statements/src/adapters/__tests__/in-memory-treezor-transaction.repository.ts",
+      "services/statements/src/adapters/statements/postgres.statements.repository.spec.ts",
+      "services/statements/src/adapters/statements/postgres.statements.repository.ts",
+      "services/statements/src/adapters/statements/statement-entry.dto.ts",
+      "services/statements/src/adapters/treezor-adapters/treezor.transaction.repository.spec.ts",
+      "services/statements/src/adapters/treezor-adapters/treezor.transaction.repository.ts",
+      "services/statements/src/adapters/utils.ts",
+      "services/statements/src/domain/statement.ts",
+      "services/statements/src/domain/transaction.ts",
+      "services/statements/src/migrations/1698655532000_AddVariousInfoToStatements.ts",
+      "services/statements/src/migrations/migrations.ts",
+      "services/statements/src/usecases/retrieve-statement-entries.ts",
+      "services/statements/src/utils/build-treezor-requester.ts",
+      "services/statements/src/utils/treezor-date-parser.spec.ts",
+      "services/statements/src/utils/treezor-date-parser.ts"
+    ],
+    "title": "Feat(BT-887): Add execution date and transaction value"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-25T19:08:35Z",
+    "files": [
+      "services/statements/src/domain/wallet-user-updated-event.projection.test.ts",
+      "services/statements/src/domain/wallet-user-updated-event.projection.ts"
+    ],
+    "title": "test(BT-975): more tests for the projection !"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-25T08:08:11Z",
+    "files": [
+      "services/statements/src/adapters/__tests__/in-memory-wallet-id-registration-number-link.repository.ts",
+      "services/statements/src/adapters/links/postgres-walletId-registrationNumber.repository.ts",
+      "services/statements/src/config/config.ts",
+      "services/statements/src/domain/wallet-registration-link.ts",
+      "services/statements/src/domain/wallet-user-updated-event.projection.test.ts",
+      "services/statements/src/domain/wallet-user-updated-event.projection.ts"
+    ],
+    "title": "feat(BT-975): add config and projection and its test"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-24T15:17:10Z",
+    "files": [
+      "services/statements/src/adapters/links/postgres-walletId-registrationNumber.dto.ts",
+      "services/statements/src/adapters/links/postgres-walletId-registrationNumber.repository.ts",
+      "services/statements/src/migrations/1698160886000_WalletIdRegistrationNumberLinksTable.ts",
+      "services/statements/src/migrations/migrations.ts"
+    ],
+    "title": "feat(statements): PostgresWalletIdRegistrationNumberLinkRepository + DTO"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-24T15:13:59Z",
+    "files": [],
+    "title": "feat(BT-975): PostgresWalletIdRegistrationNumberLinkRepository + DTO"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-24T12:47:59Z",
+    "files": [
+      "services/statements/src/adapters/__tests__/in-memory-wallet-id-registration-number-link.repository.ts",
+      "services/statements/src/domain/wallet-registration-link.ts"
+    ],
+    "title": "feat(BT-975): add the InMemoryWalletIdRegistrationNumberLinkRepos"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-19T13:29:21Z",
+    "files": [
+      "services/statements/src/adapters/__tests__/in-memory-treezor-transaction.repository.ts",
+      "services/statements/src/adapters/treezor-adapters/treezor.transaction.repository.ts",
+      "services/statements/src/domain/transaction.ts"
+    ],
+    "title": "fix(statements): pagination checks for transactions"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-19T07:52:35Z",
+    "files": [
+      "services/statements/src/adapters/__tests__/in-memory-treezor-transaction.repository.ts"
+    ],
+    "title": "fix(statements): various fixes for InMemoryTreezorTransactionRepository"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-18T07:42:44Z",
+    "files": [
+      "services/statements/src/adapters/treezor-adapters/treezor.transaction.repository.ts",
+      "services/statements/src/domain/payin-strategy/payin-strategy.ts",
+      "services/statements/src/domain/payout-strategy/payout-strategy.ts",
+      "services/statements/src/domain/strategy.ts",
+      "services/statements/src/domain/transfer-strategy/transfer-strategy.ts"
+    ],
+    "title": "fix(statements): correct name transfer → transaction"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-17T08:13:26Z",
+    "files": [
+      "services/statements/src/domain/payin-strategy/payin-strategy.test.ts",
+      "services/statements/src/domain/payin-strategy/payin-strategy.ts",
+      "services/statements/src/domain/payout-strategy/payout-strategy.test.ts",
+      "services/statements/src/domain/payout-strategy/payout-strategy.ts",
+      "services/statements/src/domain/strategy.ts",
+      "services/statements/src/domain/transfer-strategy/transfer-strategy.test.ts",
+      "services/statements/src/domain/transfer-strategy/transfer-strategy.ts",
+      "services/statements/src/usecases/fetch-all-companies-statements.ts",
+      "services/statements/src/usecases/retrieve-statement-entries.ts"
+    ],
+    "title": "refacto(statements): makes transaction walletId strategies polymorphable"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-11T12:29:45Z",
+    "files": [
+      "services/statements/serverless.yml",
+      "services/statements/src/config/config.ts",
+      "services/statements/src/domain/transaction.ts",
+      "services/statements/src/domain/transfer-strategy/transfer-strategy.ts",
+      "services/statements/src/lambda/fetch-all-companies-statements.ts",
+      "services/statements/src/usecases/fetch-all-companies-statements.ts"
+    ],
+    "title": "Feat(BT-820): import statements for all companies for a given period"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-10T14:19:13Z",
+    "files": [
+      "services/statements/src/adapters/__tests__/in-memory-company-source-user-link.repository.ts",
+      "services/statements/src/adapters/links/postgres-company-source-user-link.repository.ts",
+      "services/statements/src/domain/company-source-user-link.projection.test.ts",
+      "services/statements/src/domain/company-source-user-link.ts"
+    ],
+    "title": "feat(statements): add getAll to the CompanySourceUserLinkRepositories"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-10T07:48:33Z",
+    "files": [
+      "services/statements/src/adapters/__tests__/in-memory-source-user-wallet-link.repository.ts",
+      "services/statements/src/adapters/links/postgres-source-user-wallet-link.repository.ts",
+      "services/statements/src/domain/transfer-strategy/source-user-wallet-link.projection.test.ts",
+      "services/statements/src/domain/transfer-strategy/source-user-wallet-link.ts",
+      "services/statements/src/lambda/retrieve-statement-entries.ts",
+      "services/statements/src/usecases/retrieve-statement-entries.ts"
+    ],
+    "title": "feat(statements): add `getAllLinks` to the `SourceUserWalletLinkRepository`ies"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-09T14:34:20Z",
+    "files": [
+      "services/statements/src/lambda/retrieve-statement-entries.ts",
+      "services/statements/src/usecases/retrieve-statement-entries.ts"
+    ],
+    "title": "fix(statements): de-optionalize date lambda parameters and fix userId"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-06T13:49:32Z",
+    "files": ["frontend/employee/src/pages/user-guide.tsx"],
+    "title": "fix(BT-682): allow the user guide window to open properly on browsers"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-10-05T11:34:13Z",
+    "files": ["package.json", "services/graphql-admin/package.json"],
+    "title": "chore(BT-737): `@betterway/appsync-vtl` to dev dependencies."
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-09-25T07:58:39Z",
+    "files": [
+      "services/statements/package.json",
+      "services/statements/src/adapters/__tests__/in-memory-source-beneficiary-id-user-wallet-id.repository.ts",
+      "services/statements/src/adapters/__tests__/in-memory-treezor-transaction.repository.ts",
+      "services/statements/src/adapters/__tests__/treezor-transactions-fake-server.js",
+      "services/statements/src/adapters/beneficiary-id-user-wallet-id/beneficiary-id-user-wallet-id.dto.ts",
+      "services/statements/src/adapters/beneficiary-id-user-wallet-id/beneficiary-id-user-wallet-id.repository.ts",
+      "services/statements/src/adapters/statements/postgres.statements.repository.spec.ts",
+      "services/statements/src/adapters/statements/postgres.statements.repository.ts",
+      "services/statements/src/adapters/treezor-adapters/treezor-payouts.repository.spec.ts",
+      "services/statements/src/adapters/treezor-adapters/treezor-payouts.repository.ts",
+      "services/statements/src/adapters/treezor-adapters/treezor.transaction.repository.spec.ts",
+      "services/statements/src/adapters/treezor-adapters/treezor.transaction.repository.ts",
+      "services/statements/src/adapters/utils.ts",
+      "services/statements/src/config/config.ts",
+      "services/statements/src/domain/beneficiary-id-user-wallet-id.ts",
+      "services/statements/src/domain/payin-strategy/payin-strategy.test.ts",
+      "services/statements/src/domain/payin-strategy/payin-strategy.ts",
+      "services/statements/src/domain/payout-strategy/payout-strategy.test.ts",
+      "services/statements/src/domain/payout-strategy/payout-strategy.ts",
+      "services/statements/src/domain/payout-strategy/payout.ts",
+      "services/statements/src/domain/payout-strategy/virtual-iban.ts",
+      "services/statements/src/domain/statement.ts",
+      "services/statements/src/domain/transaction.ts",
+      "services/statements/src/lambda/retrieve-statement-entries.ts",
+      "services/statements/src/migrations/1695609458000_CreateBeneficiaryIdUserWalletId.ts",
+      "services/statements/src/migrations/migrations.ts",
+      "services/statements/src/usecases/beneficiary-id-user-wallet-id.projection.ts",
+      "services/statements/src/usecases/retrieve-statement-entries.ts",
+      "services/statements/src/utils.ts",
+      "services/statements/src/utils/build-treezor-requester.ts",
+      "services/statements/src/utils/index.ts",
+      "services/statements/src/utils/treezor-date-parser.spec.ts",
+      "services/statements/src/utils/treezor-date-parser.ts",
+      "yarn.lock"
+    ],
+    "title": "Feat(BT-605): Retrieve wallet ids for transactions using personal IBAN as destination"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-09-21T14:49:45Z",
+    "files": [
+      "services/statements/src/adapters/treezor-adapters/treezor.transaction.repository.ts",
+      "services/statements/src/adapters/utils.ts"
+    ],
+    "title": "[BT-605] - refactor: extract request builder from transaction repository"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-09-20T14:40:01Z",
+    "files": [
+      "services/statements/package.json",
+      "services/statements/src/adapters/treezor-adapters/payouts.repository.spec.ts",
+      "services/statements/src/adapters/treezor-adapters/payouts.repository.ts",
+      "services/statements/src/adapters/utils.ts",
+      "services/statements/src/domain/payout.ts",
+      "yarn.lock"
+    ],
+    "title": "refacto(statements): parse third party output"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-09-19T08:38:28Z",
+    "files": ["services/statements/src/utils.ts"],
+    "title": "[BT-723] Refacto handleTreezorRequest"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-09-18T14:29:16Z",
+    "files": [
+      ".eslintrc.json",
+      ".github/workflows/cucumber_notion.yml",
+      ".github/workflows/dev_workflow.yml",
+      ".github/workflows/nightly_workflow.yml",
+      ".github/workflows/pre_release_init_workflow.yml",
+      ".github/workflows/prod_workflow.yml",
+      ".github/workflows/release_workflow.yml",
+      ".github/workflows/weekly_workflow.yml",
+      ".nvmrc",
+      ".yarnrc.yml",
+      "adapters/aws/package.json",
+      "adapters/csv/package.json",
+      "adapters/hipay/package.json",
+      "adapters/iban/package.json",
+      "adapters/jwe/package.json",
+      "adapters/local/package.json",
+      "adapters/phone-number/package.json",
+      "adapters/phone-number/src/index.test.ts",
+      "adapters/phone-number/src/index.ts",
+      "adapters/postgres/package.json",
+      "adapters/postgres/src/categorizer/repositories/merchantiban.ts",
+      "adapters/postgres/src/categorizer/repositories/merchantid.ts",
+      "adapters/postgres/src/categorizer/repositories/tagvalue.ts",
+      "adapters/puppeteer/package.json",
+      "adapters/sendinblue/package.json",
+      "adapters/sentry/package.json",
+      "adapters/sentry/src/lambda-wrapper.ts",
+      "adapters/slack/package.json",
+      "adapters/treezor/package.json",
+      "adapters/treezor/src/index.ts",
+      "adapters/typedi/package.json",
+      "adapters/yousign/package.json",
+      "cypress/cypress.config.ts",
+      "cypress/cypress/e2e/admin/importRh.cy.ts",
+      "cypress/cypress/e2e/appUser/theme.cy.ts",
+      "cypress/cypress/fixtures/data/theme.json",
+      "cypress/cypress/support/commands.ts",
+      "cypress/cypress/support/cypress.d.ts",
+      "cypress/cypress/support/selectors/onboardingUser.ts",
+      "cypress/cypress/support/utils/adminApp.ts",
+      "cypress/cypress/support/utils/developerMail.ts",
+      "cypress/cypress/support/utils/employees.ts",
+      "cypress/cypress/support/utils/frontend.ts",
+      "cypress/package.json",
+      "cypress/tsconfig.json",
+      "domain/aggregates/package.json",
+      "domain/aggregates/src/__tests__/integration.ts",
+      "domain/aggregates/src/company/CompanyRegistration.ts",
+      "domain/aggregates/src/company/events/CompanyMetaRemoved.event.ts",
+      "domain/aggregates/src/company/events/CompanyMetaUpdated.event.ts",
+      "domain/aggregates/src/company/events/CompanyPersonAdded.event.ts",
+      "domain/aggregates/src/user/events/UserPhoneValidated.event.ts",
+      "domain/aggregates/src/wallet/WalletPayment.ts",
+      "domain/aggregates/src/wallet/events/WalletProfileAdded.event.ts",
+      "domain/commands/package.json",
+      "domain/commands/src/__tests__/superadmin/ImportPayout.test.ts",
+      "domain/ports/package.json",
+      "domain/ports/src/authentication.service.ts",
+      "domain/ports/src/business-info.service.ts",
+      "domain/ports/src/merchant-authorized-notifier.service.ts",
+      "domain/ports/src/mfa.service.ts",
+      "domain/ports/src/queue.interface.ts",
+      "domain/values/package.json",
+      "domain/values/src/PeriodicityValue.test.ts",
+      "domain/values/src/budget/BudgetLoader.ts",
+      "frontend/admin/.eslintrc.json",
+      "frontend/admin/package.json",
+      "frontend/admin/serverless.yml",
+      "frontend/admin/src/setupProxy.js",
+      "frontend/admin/webpack.config.js",
+      "frontend/admin_edge/serverless.yml",
+      "frontend/employee/.eslintrc.json",
+      "frontend/employee/package.json",
+      "frontend/employee/serverless.yml",
+      "frontend/employee/src/components/payment-methods/credit-card/CreditCardContainer.tsx",
+      "frontend/employee/webpack.config.js",
+      "frontend/employee_edge/serverless.yml",
+      "frontend/react-auth/src/index.tsx",
+      "frontend/react-auth/src/pkce.ts",
+      "package.json",
+      "services/assets/package.json",
+      "services/assets/serverless.yml",
+      "services/budget/package.json",
+      "services/budget/serverless.yml",
+      "services/cardauthorizer/package.json",
+      "services/cardauthorizer/serverless.yml",
+      "services/command-worker/package.json",
+      "services/command-worker/serverless.yml",
+      "services/company-configuration/package.json",
+      "services/company-configuration/serverless.yml",
+      "services/company-configuration/src/__tests__/companyConfig.json",
+      "services/eventbus/package.json",
+      "services/eventbus/serverless.yml",
+      "services/export/package.json",
+      "services/export/serverless.yml",
+      "services/export/src/wallet-budget-rule/wallet-budget-rule.repository.ts",
+      "services/export/src/wallet-iban/wallet-iban.repository.ts",
+      "services/graphql-admin/package.json",
+      "services/graphql-admin/serverless.yml",
+      "services/graphql-admin/src/authorizer.ts"
+    ],
+    "title": "Bt 605 recup wallet id transactions iban perso"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-09-11T12:22:39Z",
+    "files": [
+      "adapters/treezor/src/index.ts",
+      "services/company-configuration/package.json",
+      "services/company-configuration/src/__tests__/companyConfig.json",
+      "services/statements/package.json",
+      "services/statements/src/adapters/find-company-wallet.ts",
+      "services/statements/src/adapters/get-company-transactions.ts",
+      "services/statements/src/adapters/postgres.statements.repository.spec.ts",
+      "services/statements/src/adapters/postgres.statements.repository.ts",
+      "services/statements/src/adapters/statement-entry.dto.ts",
+      "services/statements/src/adapters/treezor.transaction.repository.ts",
+      "services/statements/src/adapters/treezor.wallet.repository.ts",
+      "services/statements/src/config/config.ts",
+      "services/statements/src/domain/company.ts",
+      "services/statements/src/domain/statement.ts",
+      "services/statements/src/domain/transaction.ts",
+      "services/statements/src/domain/wallet.ts",
+      "services/statements/src/lambda/generate-statement-entries.ts",
+      "services/statements/src/lambda/retrieve-statement-entries.ts",
+      "services/statements/src/migrations/1694096008000_AddTransactionType.ts",
+      "services/statements/src/migrations/1694672163000_RemoveCompanyName.ts",
+      "services/statements/src/migrations/migrations.ts",
+      "services/statements/src/usecases/retrieve-statement-entries.ts",
+      "services/statements/src/utils.ts",
+      "services/statements/tsconfig.json",
+      "yarn.lock"
+    ],
+    "title": "BT-606: Lister toutes les transactions {id, type} par company"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-31T11:00:28Z",
+    "files": [
+      "frontend/employee/src/components/payment-methods/card/CvvField.tsx",
+      "frontend/employee/src/components/payment-methods/card/ExpField.tsx",
+      "frontend/employee/src/components/payment-methods/card/HolderField.tsx",
+      "frontend/employee/src/components/payment-methods/card/NumberField.tsx",
+      "frontend/employee/src/components/payment-methods/card/TitleField.tsx",
+      "frontend/employee/src/components/payment-methods/card/index.tsx",
+      "frontend/employee/src/hooks/company/useCompany.ts",
+      "services/company-configuration/src/domain/company-configuration.ts",
+      "services/treezor-sync/src/models/walletCard-card/__test__/__snapshots__/card.projection.test.ts.snap",
+      "services/treezor-sync/src/models/walletCard-card/adapters/configuration.lambda.ts",
+      "services/treezor-sync/src/models/walletCard-card/card.service.ts"
+    ],
+    "title": "Fix(graphql): physicalCardDesign"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-31T07:38:19Z",
+    "files": [
+      "services/company-configuration/src/domain/company-configuration.ts",
+      "services/treezor-sync/src/models/walletCard-card/__test__/__snapshots__/card.projection.test.ts.snap",
+      "services/treezor-sync/src/models/walletCard-card/adapters/configuration.lambda.ts",
+      "services/treezor-sync/src/models/walletCard-card/card.service.ts"
+    ],
+    "title": "fix: designCode should be a 2 digit max integer"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-31T06:44:42Z",
+    "files": [
+      "frontend/employee/src/components/payment-methods/card/CardActionsContainer.tsx",
+      "frontend/employee/src/components/payment-methods/card/CvvField.tsx",
+      "frontend/employee/src/components/payment-methods/card/ExpField.tsx",
+      "frontend/employee/src/components/payment-methods/card/HolderField.tsx",
+      "frontend/employee/src/components/payment-methods/card/NumberField.tsx",
+      "frontend/employee/src/components/payment-methods/card/TitleField.tsx",
+      "frontend/employee/src/components/payment-methods/card/index.tsx",
+      "frontend/employee/src/pages/topup/details.tsx"
+    ],
+    "title": "BT-595 - Changement de visuel de la carte virtuelle pour un companyID specifique"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-30T08:42:08Z",
+    "files": [
+      "frontend/employee/public/images/betterway_arval_symbol.svg",
+      "frontend/employee/src/components/Logo.tsx"
+    ],
+    "title": "Collapsed Logo for Arval "
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-30T08:14:07Z",
+    "files": [
+      "frontend/admin/package.json",
+      "frontend/employee/package.json",
+      "frontend/employee/public/images/betterway_arval_logo.svg",
+      "frontend/employee/src/components/Logo.tsx",
+      "frontend/employee/src/hooks/company/useCompany.ts",
+      "frontend/employee/src/layout/Sider.tsx",
+      "services/eventbus/package.json",
+      "yarn.lock"
+    ],
+    "title": "Bt 593 header logo company id desktop"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-18T14:43:17Z",
+    "files": [
+      "package.json",
+      "services/company-configuration/src/__tests__/FakeCompanyConfigRepository.ts",
+      "services/company-configuration/src/adapters/company-configuration.repository.spec.ts",
+      "services/company-configuration/src/adapters/company-configuration.repository.ts",
+      "services/company-configuration/src/domain/company-configuration.ts",
+      "services/company-configuration/src/lambda/edit-company-config.spec.ts",
+      "services/company-configuration/src/lambda/edit-company-config.ts",
+      "services/company-configuration/src/lambda/get-company-config.ts",
+      "services/company-configuration/src/usecases/get-company-config.spec.ts",
+      "services/company-configuration/src/usecases/get-company-config.ts",
+      "services/company-configuration/src/usecases/update-company-config.spec.ts",
+      "services/sso/src/strategies/local-login.strategy.ts",
+      "services/sync-beneficiaries/features/compte-rendu-integration.feature",
+      "services/treezor-sync/package.json",
+      "services/treezor-sync/serverless.variables.yml",
+      "services/treezor-sync/serverless.yml",
+      "services/treezor-sync/src/models/walletCard-card/__test__/__snapshots__/card.projection.test.ts.snap",
+      "services/treezor-sync/src/models/walletCard-card/__test__/card.projection.test.ts",
+      "services/treezor-sync/src/models/walletCard-card/adapters/configuration.lambda.ts",
+      "services/treezor-sync/src/models/walletCard-card/card.service.ts",
+      "services/treezor-sync/src/projection.ts",
+      "services/treezor-sync/src/utils/functions.ts",
+      "yarn.lock"
+    ],
+    "title": "BT-597 Changer-l-appel-la-creation-de-carte-pour-un-companyID"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-17T11:08:19Z",
+    "files": [
+      "services/statements/serverless.resources.yml",
+      "services/statements/src/config/config.ts"
+    ],
+    "title": "Bt 671 update postgre sql version dans statements"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-16T16:29:57Z",
+    "files": ["services/statements/serverless.resources.yml"],
+    "title": "Revert \"Update: PG version for AWS RDS from 13.10 to 15.3\""
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-16T14:09:28Z",
+    "files": ["services/statements/serverless.resources.yml"],
+    "title": "Update: PG version for AWS RDS from 13.10 to 15.3"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-14T17:32:36Z",
+    "files": [
+      "services/statements/package.json",
+      "services/statements/src/adapters/get-company-transactions.ts",
+      "services/statements/src/adapters/postgres.statements.repository.ts",
+      "services/statements/src/adapters/statement-entry.dto.ts",
+      "services/statements/src/adapters/statements.repository.spec.ts",
+      "services/statements/src/adapters/statements.repository.ts",
+      "services/statements/src/config/config.ts",
+      "services/statements/src/config/connection.service.ts",
+      "services/statements/src/domain/statement.ts",
+      "services/statements/src/lambda/generate-statement-entries.ts",
+      "services/statements/src/lambda/lambda-utils.ts",
+      "services/statements/src/lambda/retrieve-statement-entries.ts",
+      "services/statements/src/migrations/1691483902000_CreateStatementsTable.ts",
+      "services/statements/src/usecases/retrieve-statement-entries.ts"
+    ],
+    "title": "BT-666-Tester-le-repository-des-statements"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-14T17:06:01Z",
+    "files": [
+      "services/statements/package.json",
+      "services/statements/src/adapters/statements.repository.spec.ts",
+      "services/statements/src/adapters/statements.repository.ts",
+      "services/statements/src/config/config.ts",
+      "services/statements/src/config/connection.service.ts",
+      "services/statements/src/domain/statement.ts",
+      "services/statements/src/lambda/lambda-utils.ts"
+    ],
+    "title": "Bt 666 tester le repository des statements"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-09T13:27:17Z",
+    "files": [
+      "serverless-compose.yml",
+      "services/statements/package.json",
+      "services/statements/serverless.resources.yml",
+      "services/statements/serverless.variables.yml",
+      "services/statements/src/migrations/1691483902000_CreateStatementsTable.ts",
+      "services/statements/webpack.config.js",
+      "tools/serverless-build/stages/beta.yml",
+      "tools/serverless-build/stages/default.yml",
+      "tools/serverless-build/stages/dev.yml",
+      "tools/serverless-build/stages/local.yml",
+      "tools/serverless-build/stages/prod.yml",
+      "yarn.lock"
+    ],
+    "title": "Bt 589 statements walking skeleton (FIXes)"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-09T08:51:50Z",
+    "files": [
+      "services/statements/package.json",
+      "services/statements/src/adapters/statements.repository.spec.ts",
+      "services/statements/src/adapters/statements.repository.ts",
+      "services/statements/src/config/config.ts",
+      "services/statements/src/config/connection.service.ts",
+      "services/statements/src/domain/statement.ts",
+      "services/statements/src/lambda/lambda-utils.ts"
+    ],
+    "title": "Bt 666 Tester le repository des statements "
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-08T12:47:41Z",
+    "files": [
+      "betterway.code-workspace",
+      "services/export/jest.config.cjs",
+      "services/statements/README.md",
+      "services/statements/cucumber.json",
+      "services/statements/features/supports/.gitkeep",
+      "services/statements/jest.config.js",
+      "services/statements/package.json",
+      "services/statements/reports/.gitkeep",
+      "services/statements/serverless.resources.yml",
+      "services/statements/serverless.variables.yml",
+      "services/statements/serverless.yml",
+      "services/statements/src/adapters/statement-entry.dto.ts",
+      "services/statements/src/adapters/statements.repository.ts",
+      "services/statements/src/config/config.ts",
+      "services/statements/src/config/connection.service.ts",
+      "services/statements/src/domain/company.ts",
+      "services/statements/src/domain/statement.ts",
+      "services/statements/src/domain/wallet.ts",
+      "services/statements/src/lambda/generate-statement-entries.ts",
+      "services/statements/src/lambda/lambda-utils.ts",
+      "services/statements/src/migrations/1691483902000_CreateStatementsTable.ts",
+      "services/statements/src/migrations/index.ts",
+      "services/statements/tsconfig.json",
+      "services/statements/webpack.config.js",
+      "yarn.lock"
+    ],
+    "title": "Bt 589 statements walking skeleton"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-03T14:51:20Z",
+    "files": [
+      "adapters/sendinblue/src/transactional-email.service.ts",
+      "domain/ports/src/transactional-email.service.ts",
+      "services/sync-beneficiaries/features/supports/general.steps.ts",
+      "services/sync-beneficiaries/src/__tests__/fakes/fake-report-sender.ts",
+      "services/sync-beneficiaries/src/__tests__/sync-beneficiaries.world.ts",
+      "services/sync-beneficiaries/src/adapters/email-report-sender.ts",
+      "services/sync-beneficiaries/src/adapters/import-beneficiaries-file.spec.ts",
+      "services/sync-beneficiaries/src/domain/import-beneficiaries-file.ts",
+      "services/sync-beneficiaries/src/lambda/generate-sync-beneficiaries-report.ts",
+      "services/sync-beneficiaries/src/lambda/split-by-beneficiary.ts",
+      "services/sync-beneficiaries/src/usecases/generate-sync-beneficiaries-report.ts",
+      "services/sync-beneficiaries/src/usecases/split-by-beneficiary.spec.ts",
+      "services/sync-beneficiaries/src/usecases/split-by-beneficiary.ts"
+    ],
+    "title": "Fix sync beneficiaries email 2"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-02T15:57:42Z",
+    "files": [
+      "frontend/admin/src/components/employees/manage/UploadUsersFileButton.tsx",
+      "frontend/admin/src/hooks/sync-beneficiaries/useSyncBeneficiaries.ts",
+      "services/graphql-admin/graphql/mutation.graphql",
+      "services/graphql-admin/templates/Mutation/requestSyncBeneficiaries.ts",
+      "services/sync-beneficiaries/src/__tests__/sync-beneficiaries.world.ts",
+      "services/sync-beneficiaries/src/adapters/email-report-sender.ts",
+      "services/sync-beneficiaries/src/lambda/generate-sync-beneficiaries-report.ts",
+      "services/sync-beneficiaries/src/usecases/generate-sync-beneficiaries-report.ts"
+    ],
+    "title": "fix: email to send the report 2"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-08-02T15:05:56Z",
+    "files": [
+      "services/sync-beneficiaries/src/__tests__/fakes/fake-report-sender.ts",
+      "services/sync-beneficiaries/src/adapters/email-report-sender.ts"
+    ],
+    "title": "fix: email to send the report"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-07-28T13:56:34Z",
+    "files": [
+      "adapters/sendinblue/src/transactional-email.service.ts",
+      "frontend/admin/public/locales/en/dashboard.json",
+      "frontend/admin/public/locales/fr/dashboard.json",
+      "frontend/admin/src/components/employees/manage/UploadUsersFileButton.tsx",
+      "frontend/admin/src/hooks/sync-beneficiaries/useSyncBeneficiaries.ts",
+      "frontend/admin/src/hooks/user/useCurrentUser.ts",
+      "services/graphql-admin/graphql/mutation.graphql",
+      "services/graphql-admin/templates/Mutation/requestSyncBeneficiaries.ts",
+      "services/sync-beneficiaries/features/compte-rendu-integration.feature",
+      "services/sync-beneficiaries/features/supports/general.steps.ts",
+      "services/sync-beneficiaries/features/supports/report.steps.ts",
+      "services/sync-beneficiaries/src/__tests__/fakes/fake-report-sender.ts",
+      "services/sync-beneficiaries/src/__tests__/sync-beneficiaries.world.ts",
+      "services/sync-beneficiaries/src/__tests__/utils.ts",
+      "services/sync-beneficiaries/src/adapters/email-report-sender.ts",
+      "services/sync-beneficiaries/src/lambda/generate-sync-beneficiaries-report.ts",
+      "services/sync-beneficiaries/src/usecases/generate-sync-beneficiaries-report.ts",
+      "services/sync-beneficiaries/src/usecases/sync-beneficiary.ts",
+      "yarn.lock"
+    ],
+    "title": "Bt 549 user mail to report"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-07-14T12:15:02Z",
+    "files": [
+      "services/sync-beneficiaries/features/supports/general.steps.ts",
+      "services/sync-beneficiaries/features/unicite-beneficiaire-par-employe.feature",
+      "services/sync-beneficiaries/package.json"
+    ],
+    "title": "BT-500 + BT-504 user identified by mail"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-07-01T00:07:41Z",
+    "files": [
+      ".eslintrc.json",
+      ".gitignore",
+      ".npmrc",
+      ".nvmrc",
+      ".swcrc",
+      "TODO.md",
+      "adapters/aws/.npmrc",
+      "adapters/aws/.swcrc",
+      "adapters/aws/LICENSE",
+      "adapters/aws/jest.config.cjs",
+      "adapters/aws/package.json",
+      "adapters/aws/src/sqs/message.publisher.ts",
+      "adapters/aws/tsconfig.json",
+      "adapters/csv/.npmrc",
+      "adapters/csv/.swcrc",
+      "adapters/csv/LICENSE",
+      "adapters/csv/jest.config.cjs",
+      "adapters/csv/package.json",
+      "adapters/hipay/.npmrc",
+      "adapters/hipay/.swcrc",
+      "adapters/hipay/LICENSE",
+      "adapters/hipay/jest.config.cjs",
+      "adapters/hipay/package.json",
+      "adapters/iban/.npmrc",
+      "adapters/iban/.swcrc",
+      "adapters/iban/LICENSE",
+      "adapters/iban/jest.config.cjs",
+      "adapters/iban/package.json",
+      "adapters/jwe/.npmrc",
+      "adapters/jwe/.swcrc",
+      "adapters/jwe/LICENSE",
+      "adapters/jwe/jest.config.cjs",
+      "adapters/jwe/package.json",
+      "adapters/local/.npmrc",
+      "adapters/local/.swcrc",
+      "adapters/local/LICENSE",
+      "adapters/local/jest.config.cjs",
+      "adapters/local/package.json",
+      "adapters/local/src/logging-service.ts",
+      "adapters/local/tests/logging-service.test.ts",
+      "adapters/local/tests/logging-test.log.ts",
+      "adapters/phone-number/.npmrc",
+      "adapters/phone-number/.swcrc",
+      "adapters/phone-number/LICENSE",
+      "adapters/phone-number/jest.config.cjs",
+      "adapters/phone-number/package.json",
+      "adapters/postgres/.npmrc",
+      "adapters/postgres/.swcrc",
+      "adapters/postgres/LICENSE",
+      "adapters/postgres/jest.config.cjs",
+      "adapters/postgres/package.json",
+      "adapters/puppeteer/.npmrc",
+      "adapters/puppeteer/.swcrc",
+      "adapters/puppeteer/LICENSE",
+      "adapters/puppeteer/jest.config.cjs",
+      "adapters/puppeteer/package.json",
+      "adapters/sendinblue/.npmrc",
+      "adapters/sendinblue/.swcrc",
+      "adapters/sendinblue/LICENSE",
+      "adapters/sendinblue/jest.config.cjs",
+      "adapters/sendinblue/package.json",
+      "adapters/sentry/.npmrc",
+      "adapters/sentry/.swcrc",
+      "adapters/sentry/LICENSE",
+      "adapters/sentry/jest.config.cjs",
+      "adapters/sentry/package.json",
+      "adapters/sentry/src/lambda-wrapper.ts",
+      "adapters/slack/.npmrc",
+      "adapters/slack/.swcrc",
+      "adapters/slack/LICENSE",
+      "adapters/slack/jest.config.cjs",
+      "adapters/slack/package.json",
+      "adapters/treezor/.npmrc",
+      "adapters/treezor/.swcrc",
+      "adapters/treezor/LICENSE",
+      "adapters/treezor/jest.config.cjs",
+      "adapters/treezor/package.json",
+      "adapters/typedi/.npmrc",
+      "adapters/typedi/.swcrc",
+      "adapters/typedi/LICENSE",
+      "adapters/typedi/jest.config.cjs",
+      "adapters/typedi/package.json",
+      "adapters/typedi/src/container.test.ts",
+      "adapters/yousign/.npmrc",
+      "adapters/yousign/.swcrc",
+      "adapters/yousign/LICENSE",
+      "adapters/yousign/jest.config.cjs",
+      "adapters/yousign/package.json",
+      "betterway.code-workspace",
+      "domain/aggregates/.npmrc",
+      "domain/aggregates/.swcrc",
+      "domain/aggregates/LICENSE",
+      "domain/aggregates/cucumber.json",
+      "domain/aggregates/jest.config.cjs",
+      "domain/aggregates/package.json",
+      "domain/aggregates/src/company/Company.ts",
+      "domain/aggregates/src/company/CompanyIBAN.ts",
+      "domain/aggregates/src/company/CompanyLegal.ts",
+      "domain/aggregates/src/company/CompanyPasswordPolicy.ts",
+      "domain/aggregates/src/company/CompanyRegistration.ts"
+    ],
+    "title": "Burn the yarn, update the libs ! Improve the DX !"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-06-26T13:39:18Z",
+    "files": [
+      "adapters/sendinblue/src/__mocks__/@sendinblue/client.ts",
+      "adapters/sendinblue/src/transactional-email.service.test.ts",
+      "adapters/sendinblue/src/transactional-email.service.ts"
+    ],
+    "title": "fix: sendinblue/brevo apiKey"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-06-26T09:10:31Z",
+    "files": [
+      "adapters/sendinblue/src/transactional-email.service.ts",
+      "domain/commands/src/usecases/superadmin/ImportPayout.usecase.ts",
+      "domain/ports/src/transactional-email.service.ts",
+      "domain/values/src/zod.ts",
+      "services/sync-beneficiaries/features/report-generation.feature",
+      "services/sync-beneficiaries/package.json",
+      "services/sync-beneficiaries/serverless.yml",
+      "services/sync-beneficiaries/src/__tests__/generate-sync-beneficiaries-report.spec.ts",
+      "services/sync-beneficiaries/src/lambda/generate-sync-beneficiaries-report.ts",
+      "services/sync-beneficiaries/webpack.config.js"
+    ],
+    "title": "Bt 386 sync beneficiaries report management"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-06-19T12:40:50Z",
+    "files": [
+      "adapters/local/package.json",
+      "adapters/local/src/logging-service.ts",
+      "adapters/local/tests/logging-service.test.ts",
+      "adapters/local/tests/logging-test.log.ts"
+    ],
+    "title": "fix(logging): pino calls are inverted"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-06-16T08:56:09Z",
+    "files": [
+      "adapters/sendinblue/package.json",
+      "adapters/sendinblue/src/__mocks__/@sendinblue/client.ts",
+      "adapters/sendinblue/src/transactional-email.service.test.ts",
+      "adapters/sendinblue/src/transactional-email.service.ts",
+      "toto.csv",
+      "yarn.lock"
+    ],
+    "title": "Bt 455 replace transac mail api with lib"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-06-15T12:58:34Z",
+    "files": [
+      "adapters/local/src/logging-service.ts",
+      "adapters/local/tests/logging-service.test.ts",
+      "adapters/local/tests/logging-test.direct.ts",
+      "adapters/local/tests/logging-test.log.ts",
+      "yarn.lock"
+    ],
+    "title": "fix logger bug"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-06-06T07:48:43Z",
+    "files": [
+      "services/treezor-sync/jest.config.cjs",
+      "services/treezor-sync/src/models/viban/__test__/__snapshots__/viban.projection.test.ts.snap",
+      "services/treezor-sync/src/models/viban/__test__/viban-validation-period.test.ts",
+      "services/treezor-sync/src/models/viban/__test__/viban.projection.test.ts",
+      "services/treezor-sync/src/models/viban/viban-validation-period.ts",
+      "services/treezor-sync/src/models/viban/viban.service.ts",
+      "services/treezor-sync/tsconfig.json"
+    ],
+    "title": "Fix/bt 379/viban validity period"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-05-24T14:47:41Z",
+    "files": [
+      "services/sync-beneficiaries/README.md",
+      "services/sync-beneficiaries/architecture.png"
+    ],
+    "title": "Premier jet du README sync-beneficiaries"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-05-10T08:01:14Z",
+    "files": [
+      "services/payslip-export/features/supports/payslip.steps.ts",
+      "services/payslip-export/features/ventilation-paiement.feature",
+      "services/payslip-export/package.json"
+    ],
+    "title": "Bt 164 changement d avantages mobilit budget attribu au profil b n ficiaire"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-04-26T12:39:55Z",
+    "files": [
+      "adapters/aws/src/dynamodb/client.test.ts",
+      "adapters/aws/src/dynamodb/client.ts",
+      "adapters/local/jest.config.cjs",
+      "adapters/local/package.json",
+      "adapters/local/src/logging-service.ts",
+      "adapters/local/tests/logging-service.test.ts",
+      "adapters/local/tests/logging-test.direct.ts",
+      "adapters/local/tests/logging-test.log.ts",
+      "adapters/sendinblue/src/mfa-service.test.ts",
+      "domain/aggregates/src/__tests__/integration.ts",
+      "domain/aggregates/src/__tests__/loadAggregate.ts",
+      "domain/aggregates/src/company/__tests__/load.integration.test.ts",
+      "domain/aggregates/src/user/__tests__/load.integration.test.ts",
+      "domain/aggregates/src/utils.test.ts",
+      "domain/aggregates/src/wallet/__tests__/load.integration.test.ts",
+      "jest.config.js",
+      "package.json",
+      "services/graphql/src/wallet-card-pan.ts",
+      "services/sso/src/handler.ts",
+      "shared/core/src/Logger.ts",
+      "tools/jest-mocks/src/cqrs.ts",
+      "tools/jest-mocks/src/logging.ts",
+      "yarn.lock"
+    ],
+    "title": "Bt 234 poc structurer les logs"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-04-17T16:45:04Z",
+    "files": [
+      "frontend/employee/public/locales/fr/card.json",
+      "frontend/employee/public/locales/fr/form.json",
+      "frontend/employee/src/components/payment-methods/card/BWCardActions.tsx",
+      "frontend/employee/src/components/payment-methods/card/CardActionsContainer.tsx",
+      "frontend/employee/src/components/payment-methods/card/CardContainer.tsx",
+      "frontend/employee/src/components/payment-methods/card/CardPanBloc.tsx",
+      "frontend/employee/src/components/payment-methods/card/ConvertCard.tsx",
+      "frontend/employee/src/components/payment-methods/card/VirtualCardActions.tsx",
+      "frontend/employee/src/context/CardProvider.tsx",
+      "frontend/employee/src/hooks/card/useCard.ts",
+      "frontend/employee/src/pages/main.tsx",
+      "frontend/employee/src/pages/payment-method/payment-method.tsx",
+      "frontend/employee/src/reducers/card/index.ts",
+      "frontend/employee/src/reducers/card/updateCard.ts",
+      "frontend/employee/src/utils/constants.ts",
+      "package.json",
+      "tools/local-db/docker-compose.yml"
+    ],
+    "title": "Bt 280 front fix card number copy"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-04-14T05:35:05Z",
+    "files": [
+      "tools/scripts/package.json",
+      "tools/scripts/src/user-finder.ts",
+      "yarn.lock"
+    ],
+    "title": "Output a list of the users with interesting informations"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-03-17T13:57:43Z",
+    "files": [
+      ".gitignore",
+      "frontend/admin/serverless.yml",
+      "frontend/employee/serverless.yml",
+      "tools/serverless-build/stages/default.yml"
+    ],
+    "title": "feature(frontends): add security headers to cloudfront config"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-03-16T10:37:19Z",
+    "files": ["tools/local-db/README.md"],
+    "title": "doc(local-db): add the instruction to install dependencies on Manjaro"
+  },
+  {
+    "author": "Jean-cédric T. ",
+    "createdAt": "2023-03-16T08:06:22Z",
+    "files": [
+      "frontend/admin/.env",
+      "frontend/employee/.env",
+      "tools/local-db/README.md",
+      "yarn.lock"
+    ],
+    "title": "fix(frontends): disable sourcemap generation for production builds"
+  }
+]
