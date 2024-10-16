@@ -30,10 +30,7 @@ const POSTIT_COLOURS = [
 ]
 
 const withWindowMaker : (ref: MutableRefObject<Window | null>) => <T extends (w: Window) => any>(cb: T) => ReturnType<T> | undefined = (ref) => (cb) => {
-  if(ref.current !== null) {
-    return cb(ref.current)
-  }
-  return undefined
+  return ref.current !== null ? cb(ref.current) : undefined
 }
 
 export default function Portfolio() {
@@ -713,7 +710,7 @@ const CVHeader = ({
     }
   }
 
-  const isWorthDisplayingLinkToTop = () => withWindow((w) => scrollY >= w.screen.height / 2 && document.body.scrollHeight > w.screen.height)
+  const isWorthDisplayingLinkToTop = () => withWindow((w) =>  scrollY >= w.screen.height / 2 && document.body.scrollHeight > w.screen.height)
 
   return (
     <header className="fixed w-full z-10 backdrop-blur-md bg-stone-100/30 border-b border-stone-200 shadow-md shadow-black/50">
@@ -725,9 +722,8 @@ const CVHeader = ({
           {/* <a href="#projects" className="hover:text-stone-600 hover:underline">Projects</a> */}
           <a onClick={navigateTo(navigableElementsRefs.futur)} className="hover:text-stone-600 hover:underline cursor-pointer">What I&apos;d like to try</a>
           <a onClick={navigateTo(navigableElementsRefs.contact)} className="hover:text-stone-600 hover:underline cursor-pointer">Get in Touch</a>
-          { isWorthDisplayingLinkToTop() ? (<a onClick={navigateTo(navigableElementsRefs.top)} className="flex cursor-pointer
-          bg-lime-500/25 text-stone-50 hover:bg-lime-300 text-2xl place-items-center place-content-center font-black w-16 h-16 -my-6"><ArrowBigUpDash style={{'filter' : 'drop-shadow(0 0.1rem 2px rgb(0 0 0 / 0.7))'}}/></a>) : (<span className="cursor-pointer
-            bg-transparent text-stone-200 text-2xl text-center place-content-center font-black w-16 h-16 -my-6"></span>) }
+          <a onClick={navigateTo(navigableElementsRefs.top)} className="flex cursor-pointer
+          bg-lime-500/25 text-stone-50 hover:bg-lime-300 text-2xl place-items-center place-content-center font-black w-16 h-16 -my-6"><ArrowBigUpDash style={{'filter' : 'drop-shadow(0 0.1rem 2px rgb(0 0 0 / 0.7))'}}/></a>
         </nav>
         <button onClick={toggleMenu} className="md:hidden">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
