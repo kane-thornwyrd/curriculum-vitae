@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: theme('colors.stone.100');
+  --foreground: theme('colors.stone.800');
 }
 
 body {
@@ -63,10 +63,9 @@ body {
 }
 
 .sketch-underline>span {
-  background: #bef264;
   z-index: -1;
   padding: 0 1em;
-  @apply skew-x-12 ;
+  @apply skew-x-12 bg-lime-500 ;
 }
 
 
@@ -93,5 +92,42 @@ body {
 }
 
 #contact a:hover > * {
-  @apply animate-bounce;
+  @apply animate-bounce;      
+}
+
+.sticky-fluo-paper {
+  margin: 0;
+  padding: 1.25rem .5rem .5rem .5rem;
+  border-radius: 0.15rem;
+  box-shadow:
+    inset 0 -2rem 3rem rgb(245 245 244 / 0.2),
+    inset 0 1.25rem 1rem rgb(214 211 209 / 1),
+    0 1.25rem 1.2rem 0.1rem rgba(0,0,0,0.2);
+  @apply bg-stone-200;
+}
+
+.ambulance {
+  animation: red-blue 2s infinite;
+}
+
+@keyframes red-blue {
+  0%, 100% {
+    @apply text-rose-800;
+  }
+  50% {
+    @apply text-rose-950;
+  }
+}
+
+.current-section {
+  animation: 0.25s ease-in-out 0s 8 custom-pulse;
+}
+
+@keyframes custom-pulse {
+  0%, 100% {
+    @apply text-inherit;
+  }
+  50% {
+    @apply text-lime-500;
+  }
 }

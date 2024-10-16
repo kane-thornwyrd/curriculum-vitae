@@ -1,13 +1,20 @@
 'use client'
 
-import { FC, ReactNode, useEffect, useMemo, useState } from 'react'
-import { Menu, X, Linkedin, Mail, Github, Ambulance } from 'lucide-react'
+import { FC, ReactNode, useEffect, useMemo, useState, PropsWithChildren, useRef, useLayoutEffect, MutableRefObject, DOMElement, MouseEventHandler } from 'react'
+import { Menu, X, Linkedin, Mail, Github, Ambulance, ArrowBigUpDash } from 'lucide-react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import {   type Container,
   MoveDirection,
   OutMode } from '@tsparticles/engine'
 import { loadSlim } from "@tsparticles/slim"
 import { Typewriter } from 'react-simple-typewriter'
+import Faviconify from 'faviconify'
+import { Urbanist as GFont } from 'next/font/google'
+
+const mainFont = GFont({
+  subsets: ['latin']
+})
+
 
 const POSTIT_COLOURS = [
   'postIt-orange',
@@ -19,12 +26,15 @@ const POSTIT_COLOURS = [
   'postIt-rose',
 ]
 
-
 export default function Portfolio() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [bgInit, setBgInit] = useState(false)
+  const [bgInit, setBgInit] = useState<boolean>(false)
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const navigableElementsRefs = {
+    experience: useRef(null),
+    skills: useRef(null),
+    futur: useRef(null),
+    contact: useRef(null),
+  }
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -33,16 +43,12 @@ export default function Portfolio() {
       setBgInit(true);
     });
   }, []);
-
-  const particlesLoaded = async(container? : Container | undefined) => {
-    console.log(container);
-  };
   
   const options = useMemo(
     () => ({
       background: {
         color: {
-          value: "#333",
+          value: "#1c1917",
         },
       },
       fpsLimit: 120,
@@ -65,10 +71,10 @@ export default function Portfolio() {
       },
       particles: {
         color: {
-          value: "#bef264",
+          value: "#84cc16",
         },
         links: {
-          color: "#bef264",
+          color: "#84cc16",
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -120,7 +126,7 @@ export default function Portfolio() {
           'Redacting technical documentation',
           'Improving app developer experience',
         ],
-        'Practices': [
+        'Usages': [
           '1 Week long sprints',
           'Ensemble programing',
           'Full Remote',
@@ -168,7 +174,7 @@ export default function Portfolio() {
           'Implementing an A/B testing administration interface and its backend leveraging over 15 multi-dimensional parameters for the sales terminals of the major fast food multi-nationals',
           'Implementing the custom-tailored blog for one of the largest aviation and defense company'
         ],
-        'Practices': [
+        'Usages': [
           '2 devs + 1 PM',
           '4 devs + 1 PM',
           'Full Remote',
@@ -200,7 +206,7 @@ export default function Portfolio() {
       company: 'The mishaps of life',
       description: (
           <div className="relative">
-            <div className="animate-pulse">
+            <div className="ambulance">
               <Ambulance size={32} />
             </div>
           </div>
@@ -215,7 +221,7 @@ export default function Portfolio() {
           'Re-engineering of the MVP front app into a viable SaaS product',
           'Engineering of new components and UI in collaboration with the head of design',
         ],
-        'Practices': [
+        'Usages': [
           'Full autonomy + reporting directly to CTO',
           'Solo dev on front + 1 dev back/PM + designer'
         ],
@@ -236,7 +242,7 @@ export default function Portfolio() {
         'Research and Developpement': [
           'A CLI product leveraging FFmpeg to mass convert media files according to a in-house templating system'
         ],
-        'Practices': [
+        'Usages': [
           'Full autonomy + reporting directly to CTO',
         ],
         'Architectures': [
@@ -263,7 +269,7 @@ export default function Portfolio() {
           'Creator and maintainer of the in-house React Components library',
           'Engineered the ACL-based routing HOC',
         ],
-        'Practices': [
+        'Usages': [
           '2 devs + 1 remote CTO/PM',
           '4 devs + 1 PM',
           '6 devs + 1 PM',
@@ -301,7 +307,7 @@ export default function Portfolio() {
           'Engineered the standard components library',
           'Engineered an admin UX using Bootstrap3, Material design for Bs3, jQuery-UI, and Toastr for the waow effect',
         ],
-        'Practices': [
+        'Usages': [
           'Full autonomy + reporting directly to CTO',
         ],
         'Architectures': [
@@ -328,7 +334,7 @@ export default function Portfolio() {
         'Deeds': [
           'JS Guidance'
         ],
-        'Practices': [
+        'Usages': [
           'Various',
         ],
         'Architectures': [
@@ -358,7 +364,7 @@ export default function Portfolio() {
           'Reduced the time-to-prod of landing pages from a week to a day',
           'Drupal Mentoring'
         ],
-        'Practices': [
+        'Usages': [
           'Proto-scrum',
           '1 dev + 4 front-end integrators + 2 Drupal Dev + 1 manager',
           'Full autonomy under the frontend manager',
@@ -388,7 +394,7 @@ export default function Portfolio() {
         'Deeds': [
           'Various'
         ],
-        'Practices': [
+        'Usages': [
           'Various'
         ],
         'Architectures': [
@@ -416,7 +422,7 @@ export default function Portfolio() {
         'Deeds': [
           'Various'
         ],
-        'Practices': [
+        'Usages': [
           'Various'
         ],
         'Architectures': [
@@ -438,6 +444,36 @@ export default function Portfolio() {
         ],
       }}/>),
       title: 'Web Dev Drupal/PHP/JS/Dev Ops'
+    },
+    {
+      year: 'sep. 2007 (skipped a semester due to the entrance test results) ⇒ oct. 2009',
+      company: 'IN\'Tech INFO - Software engineering course',
+      description: (<PostDefinitionList definitions={{
+        'Deeds': [
+          'Various'
+        ],
+        'Usages': [
+          'Various'
+        ],
+        'Architectures': [
+          'Various',
+        ],
+        'Technologies': [
+          'Drupal',
+          'AHAH',
+          'jQuery',
+          'Bootstrap',
+          'Ext.js',
+          'jQuery-UI',
+          'Grunt.js',
+          'Gulp',
+          'LAMP',
+          'Apache',
+          'MySQL',
+          'PHP',
+        ],
+      }}/>),
+      title: 'Student'
     }
   ]
 
@@ -476,7 +512,6 @@ export default function Portfolio() {
     'Rust',
     'Serverless',
     'SQL',
-    'Toastr',
     'Typescript',
     'Underscore.js',
     'Vercel/pkg',
@@ -484,55 +519,32 @@ export default function Portfolio() {
   ]
 
   const futurList: string[] = [
+    'More Functional Programing !',
+    'FP-TS',
     'Elixir',
     'Elm',
     'Erlang',
     'Haskell',
-    'More Functional Programing !',
   ]
 
   return (
-    <div className="min-h-screen font-sans">
+    <div className={`min-h-screen font-sans ${mainFont.className}`}>
+      <Faviconify textContent="JCT" iconShape="square" fontFamily={mainFont.className} bgColor='#292524' textSize={128}/>
       {bgInit && (
       <Particles
         id="tsparticles"
-        particlesLoaded={particlesLoaded}
         options={options}
         className='-z-40 absolute'
       />)}
-      <header className="fixed w-full z-10 backdrop-blur-md bg-stone-100/30 border-b border-stone-200 shadow-md shadow-black/50">
-        <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Jean-Cédric T.</h1>
-          <nav className="hidden md:flex space-x-4">
-            <a href="#top" className="hover:text-stone-600 hover:underline">⇑</a>
-            <a href="#experience" className="hover:text-stone-600 hover:underline">Experience</a>
-            <a href="#skills" className="hover:text-stone-600 hover:underline">Skills</a>
-            <a href="#projects" className="hover:text-stone-600 hover:underline">Projects</a>
-            <a href="#futur" className="hover:text-stone-600 hover:underline">What I&apos;d like to try</a>
-            <a href="#contact" className="hover:text-stone-600 hover:underline">Contact</a>
-          </nav>
-          <button onClick={toggleMenu} className="md:hidden">
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-        {isMenuOpen && (
-          <nav className="md:hidmden backdrop-blur-md">
-            <a href="#top" className="block px-4 py-2 hover:bg-stone-100">⇑</a>
-            <a href="#experience" className="block px-4 py-2 hover:bg-stone-100">Experience</a>
-            <a href="#skills" className="block px-4 py-2 hover:bg-stone-100">Skills</a>
-            <a href="#projects" className="block px-4 py-2 hover:bg-stone-100">Projects</a>
-            <a href="#futur" className="block px-4 py-2 hover:bg-stone-100">What I&apos;d like to try</a>
-            <a href="#contact" className="block px-4 py-2 hover:bg-stone-100">Contact</a>
-          </nav>
-        )}
-      </header>
+
+      <CVHeader {...{navigableElementsRefs}}/>
 
       {/* Main Content */}
-      <main className="pt-20 max-w-6xl mx-auto backdrop-blur-sm bg-stone-50/85 shadow-lg shadow-black/50">
+      <main className="pt-20 max-w-6xl mx-auto backdrop-blur-sm bg-stone-50/50">
         {/* Hero Section */}
-        <section id="top" className="container mx-auto px-4 py-20 text-center">
-          <h2 className="text-5xl font-bold mb-4">Senior Software Engineer</h2>
-          <p className="text-xl mb-8 sketch-underline"><span>Crafting <Typewriter
+        <section id="top" className="container mx-auto px-4 py-28 text-center">
+          <h2 className="text-7xl font-light mb-4">Senior software engineer</h2>
+          <p className="text-xl sketch-underline"><span>Crafting <Typewriter
             words={['elegant', 'robust', 'simple', 'pragmatic', 'efficient']}
             loop={false}
             cursor
@@ -544,8 +556,8 @@ export default function Portfolio() {
         </section>
 
         {/* Experience Timeline */}
-        <section id="experience" className="container mx-auto px-4 py-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
+        <section id="experience" className="container mx-auto px-4 py-20" ref={navigableElementsRefs.experience}>
+          <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">Experience</h2>
           <div className="relative border-l-2 border-stone-200 ml-3">
             {timelineEntries.map((e, i) => (
             <TimelineItem {...e} key={i}/>
@@ -554,10 +566,10 @@ export default function Portfolio() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="container mx-auto px-4 py-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
-          <div className="flex flex-col sm:flex-row sm:flex-wrap place-content-center">
-            {skillList.map((s,i) => (<SkillBadge skill={s} key={i} />))}
+        <section id="skills" className="container mx-auto md:px-4 py-20" ref={navigableElementsRefs.skills}>
+          <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">Skills</h2>
+          <div className="flex flex-row flex-wrap place-content-evenly place-items-center gap-3 md:gap-5">
+            {skillList.map((s,i) => (<StickyFluoPaper key={i} className='flex md:aspect-square md:w-40 md:h-40 font-black text-2xl place-content-center place-items-center text-center' >{s}</StickyFluoPaper>))}
           </div>
         </section>
 
@@ -579,24 +591,24 @@ export default function Portfolio() {
         </section> */}
         
         {/* Futur */}
-        <section id="futur" className="container mx-auto px-4 py-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">What I&apos;d like to try</h2>
-          <div className="flex flex-col sm:flex-row sm:flex-wrap place-content-center">
-            {futurList.map((s,i) => (<SkillBadge skill={s} key={i} />))}
+        <section id="futur" className="container mx-auto px-4 py-20" ref={navigableElementsRefs.futur}>
+          <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">What I&apos;d like to try</h2>
+          <div className="flex flex-row flex-wrap place-content-evenly place-items-center gap-3 md:gap-10">
+            {futurList.map((s,i) => (<StickyFluoPaper key={i} className='flex md:aspect-square md:w-40 md:h-40 font-black text-2xl place-content-center place-items-center text-center' >{s}</StickyFluoPaper>))}
           </div>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="container mx-auto px-4 py-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
+        <section id="contact" className="container mx-auto px-4 py-20" ref={navigableElementsRefs.contact}>
+          <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">Get in Touch</h2>
           <div className="flex justify-center space-x-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-stone-600 hover:text-lime-700">
+            <a href="https://github.com/kane-thornwyrd" target="_blank" rel="noopener noreferrer" className="text-stone-200 hover:text-lime-400 px-4">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-stone-600 hover:text-lime-700">
+            <a href="https://www.linkedin.com/in/jean-c%C3%A9dric-t/" target="_blank" rel="noopener noreferrer" className="text-sky-500 hover:text-lime-400 px-4">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:jane.doe@example.com" className="text-stone-600 hover:text-lime-700">
+            <a href="mailto:jean.cedric.t+cv-link@gmail.com?subject=Prise%20de%20contact%20depuis%20le%20CV" className="text-rose-500 hover:text-lime-400 px-4">
               <Mail size={24} />
             </a>
           </div>
@@ -604,7 +616,7 @@ export default function Portfolio() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-stone-400 py-4 text-center">
+      <footer className="bg-stone-400 py-4 text-center" >
         <p>&copy; 2024 Jean-cédric T. All rights reserved.</p>
       </footer>
       
@@ -618,8 +630,8 @@ function TimelineItem({ year, title, company, description }: { year: string, tit
       <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-white bg-lime-500">
         <div className="w-3 h-3 rounded-full bg-white"></div>
       </span>
-      <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">{title}&nbsp;<b>⋅</b>&nbsp;{company}</h3>
-      <time className="block mb-2 text-sm font-normal leading-none text-gray-400">{year}</time>{typeof description === 'string' ? (<p>{description}</p>) : (<>{description}</>)}
+      <h3 className="flex items-center mb-1 text-lg font-semibold text-stone-50">{title}&nbsp;@&nbsp;{company}</h3>
+      <time className="block mb-2 text-sm font-normal leading-none text-gray-300">{year}</time>{typeof description === 'string' ? (<p>{description}</p>) : (<>{description}</>)}
     </div>
   )
 }
@@ -640,6 +652,94 @@ const SkillBadge : FC<{ skill : string}> = ({ skill } : { skill : string}) => {
   )
 }
 
+const CVHeader = ({
+  navigableElementsRefs
+} : {navigableElementsRefs : Record<string, MutableRefObject<null | HTMLElement>>}) => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const [scrollY, setScrollY] = useState<number>(0)
+  const currentlySelected = useRef<HTMLElement | null>(null)
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+
+  useLayoutEffect(() => {
+    const handleScroll = () => {
+      if(Math.abs(scrollY - window?.scrollY) > 50)
+        setScrollY(window?.scrollY)
+    }
+
+    handleScroll();
+    window?.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window?.removeEventListener("scroll", handleScroll)
+    };
+  }, []);
+
+  const scrollToTop = (e : { stopPropagation : Function}) => {
+    e.stopPropagation()
+    window?.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
+  const navigateTo = (el: MutableRefObject<null | HTMLElement>) => {
+    const signalClass = 'current-section'
+    
+    return (e : { stopPropagation : Function}) => {
+      if(el.current !== null){
+        e.stopPropagation()
+        window.scrollTo({
+          top: Math.round(el.current.getBoundingClientRect().top + document.documentElement.scrollTop),
+          behavior: 'smooth',
+        })
+        
+        const children = el.current.children
+        for (const key in children) {
+          if (children[key].tagName === 'H2') {
+            currentlySelected.current?.classList.remove(signalClass)
+            children[key].classList.add(signalClass)
+            currentlySelected.current = children[key] as HTMLElement
+            break
+          }
+        }
+      }
+    }
+  }
+
+  const isWorthDisplayingLinkToTop = () => scrollY >= window?.screen.height / 2 && document.body.scrollHeight > window?.screen.height
+
+  return (
+    <header className="fixed w-full z-10 backdrop-blur-md bg-stone-100/30 border-b border-stone-200 shadow-md shadow-black/50">
+      <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 className="text-2xl font-bold">Jean-Cédric T.</h1>
+        <nav className="relative hidden md:flex space-x-4">
+          <a onClick={navigateTo(navigableElementsRefs.experience)} className="hover:text-stone-600 hover:underline cursor-pointer">Experience</a>
+          <a onClick={navigateTo(navigableElementsRefs.skills)} className="hover:text-stone-600 hover:underline cursor-pointer">Skills</a>
+          {/* <a href="#projects" className="hover:text-stone-600 hover:underline">Projects</a> */}
+          <a onClick={navigateTo(navigableElementsRefs.futur)} className="hover:text-stone-600 hover:underline cursor-pointer">What I&apos;d like to try</a>
+          <a onClick={navigateTo(navigableElementsRefs.contact)} className="hover:text-stone-600 hover:underline cursor-pointer">Get in Touch</a>
+          { isWorthDisplayingLinkToTop() ? (<a onClick={scrollToTop} className="flex cursor-pointer
+          bg-lime-500/25 text-stone-50 hover:bg-lime-300 text-2xl place-items-center place-content-center font-black w-16 h-16 -my-6"><ArrowBigUpDash style={{'filter' : 'drop-shadow(0 0.1rem 2px rgb(0 0 0 / 0.7))'}}/></a>) : (<span className="cursor-pointer
+            bg-transparent text-stone-200 text-2xl text-center place-content-center font-black w-16 h-16 -my-6"></span>) }
+        </nav>
+        <button onClick={toggleMenu} className="md:hidden">
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+      {isMenuOpen && (
+        <nav className="md:hidmden backdrop-blur-md place-content-center text-center">
+          { isWorthDisplayingLinkToTop() && (<a onClick={scrollToTop} className="block px-4 py-5 hover:bg-stone-100 font-black">⇑</a>) }
+          <a href="#experience" className="block px-4 py-5 hover:bg-stone-100">Experience</a>
+          <a href="#skills" className="block px-4 py-5 hover:bg-stone-100">Skills</a>
+          {/* <a href="#projects" className="block px-4 py-5 hover:bg-stone-100">Projects</a> */}
+          <a href="#futur" className="block px-4 py-5 hover:bg-stone-100">What I&apos;d like to try</a>
+          <a href="#contact" className="block px-4 py-5 hover:bg-stone-100">Get in Touch</a>
+        </nav>
+      )}
+    </header>)
+}
+
 // function ProjectCard({ title, description, technologies } : { title : string, description : string, technologies : string[] }) {
 //   return (
 //     <div className="bg-white/50 backdrop-blur-sm border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
@@ -655,19 +755,27 @@ const SkillBadge : FC<{ skill : string}> = ({ skill } : { skill : string}) => {
 // }
 
 const PostDefinitionList: FC<{definitions: Record<string, string[]>}> = ({definitions}) => (
-  <dl className='flex flex-wrap'>
+  <dl className='grid grid-cols-1 md:grid-cols-2 gap-4'>
     {Object.entries(definitions).map(([term, content], index) => (
-      <div key={index} className='grow max-w-md'>
-        <dt className='text-xl font-thin border-b-2 border-stone-300 m-1'>{term}</dt>
-        <dd>
-          <ul className='flex flex-wrap'>
-          {content.map((v, i) => (<li key={i} className={PaperCutsClassNames(() => !!(i%2))}>{v}</li>))}
-          </ul>
-        </dd>
+      <div key={index}>
+        <StickyFluoPaper>
+          <dt className='text-xl font-thin text-stone-500 m-1'>{term}</dt>
+          <dd>
+            <ul className='flex flex-wrap'>
+            {content.map((v, i) => (<li key={i} className={PaperCutsClassNames(() => !!(i%2))}>{v}</li>))}
+            </ul>
+          </dd>
+        </StickyFluoPaper>
       </div>
     ))}
   </dl>)
 
-const PaperCutsClassNames = (altern : () => boolean =  () => !!randInt(), className : string = 'cursor-pointer relative bg-stone-100/50 shadow-sm shadow-black/50') => `px-4 py-1 m-1 ${altern() ?'rotate-1 -skew-y-1':'-rotate-1 skew-y-1'} ${className}`
+const StickyFluoPaper : FC<PropsWithChildren<unknown> & { className?: string} & Record<string, unknown>> = (props) => {
+  const { children, className, ...restProps } = props
+
+  return (<div {...restProps} className={`sticky-fluo-paper ${className}`}>{children}</div>)
+}
+
+const PaperCutsClassNames = (altern : () => boolean =  () => !!randInt(), className : string = 'bg-stone-100 shadow-sm shadow-black/50') => `px-4 py-1 m-1 ${altern() ?'rotate-1 -skew-y-1':'-rotate-1 skew-y-1'} ${className}`
 
 const randInt = (max : number = 1) => Math.round(Math.random() * Math.trunc(max))
