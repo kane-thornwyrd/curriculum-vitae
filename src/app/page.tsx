@@ -8,10 +8,13 @@ import {   type Container,
   OutMode } from '@tsparticles/engine'
 import { loadSlim } from "@tsparticles/slim"
 import { Typewriter } from 'react-simple-typewriter'
-import Faviconify from 'faviconify'
-import { Urbanist as GFont } from 'next/font/google'
+import { Urbanist as GFont, Roboto_Slab as MonoFont } from 'next/font/google'
 
 const mainFont = GFont({
+  subsets: ['latin']
+})
+
+const monoFont = MonoFont({
   subsets: ['latin']
 })
 
@@ -26,10 +29,18 @@ const POSTIT_COLOURS = [
   'postIt-rose',
 ]
 
+const withWindowMaker : (ref: MutableRefObject<Window | null>) => <T extends (w: Window) => any>(cb: T) => ReturnType<T> | undefined = (ref) => (cb) => {
+  if(ref.current !== null) {
+    return cb(ref.current)
+  }
+  return undefined
+}
+
 export default function Portfolio() {
   const [bgInit, setBgInit] = useState<boolean>(false)
 
   const navigableElementsRefs = {
+    top: useRef(null),
     experience: useRef(null),
     skills: useRef(null),
     futur: useRef(null),
@@ -529,7 +540,6 @@ export default function Portfolio() {
 
   return (
     <div className={`min-h-screen font-sans ${mainFont.className}`}>
-      <Faviconify textContent="JCT" iconShape="square" fontFamily={mainFont.className} bgColor='#292524' textSize={128}/>
       {bgInit && (
       <Particles
         id="tsparticles"
@@ -542,9 +552,9 @@ export default function Portfolio() {
       {/* Main Content */}
       <main className="pt-20 max-w-6xl mx-auto backdrop-blur-sm bg-stone-50/50">
         {/* Hero Section */}
-        <section id="top" className="container mx-auto px-4 py-28 text-center">
+        <section id="top" className="container mx-auto px-4 py-28 text-center" ref={navigableElementsRefs.top}>
           <h2 className="text-7xl font-light mb-4">Senior software engineer</h2>
-          <p className="text-xl sketch-underline"><span>Crafting <Typewriter
+          <p className={`text-xl sketch-underline ${monoFont.className} font-light`}><span>Crafting <Typewriter
             words={['elegant', 'robust', 'simple', 'pragmatic', 'efficient']}
             loop={false}
             cursor
@@ -552,7 +562,7 @@ export default function Portfolio() {
             typeSpeed={70}
             deleteSpeed={50}
             delaySpeed={2000}
-          />solutions to complex problems since 2009</span></p>
+          />solutions since 2009</span></p>
         </section>
 
         {/* Experience Timeline */}
@@ -569,7 +579,7 @@ export default function Portfolio() {
         <section id="skills" className="container mx-auto md:px-4 py-20" ref={navigableElementsRefs.skills}>
           <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">Skills</h2>
           <div className="flex flex-row flex-wrap place-content-evenly place-items-center gap-3 md:gap-5">
-            {skillList.map((s,i) => (<StickyFluoPaper key={i} className='flex md:aspect-square md:w-40 md:h-40 font-black text-2xl place-content-center place-items-center text-center' >{s}</StickyFluoPaper>))}
+            {skillList.map((s,i) => (<StickyFluoPaper key={i} className='flex md:aspect-square md:w-40 md:h-40 font-light text-2xl place-content-center place-items-center text-center' >{s}</StickyFluoPaper>))}
           </div>
         </section>
 
@@ -594,22 +604,22 @@ export default function Portfolio() {
         <section id="futur" className="container mx-auto px-4 py-20" ref={navigableElementsRefs.futur}>
           <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">What I&apos;d like to try</h2>
           <div className="flex flex-row flex-wrap place-content-evenly place-items-center gap-3 md:gap-10">
-            {futurList.map((s,i) => (<StickyFluoPaper key={i} className='flex md:aspect-square md:w-40 md:h-40 font-black text-2xl place-content-center place-items-center text-center' >{s}</StickyFluoPaper>))}
+            {futurList.map((s,i) => (<StickyFluoPaper key={i} className='flex md:aspect-square md:w-40 md:h-40 font-light text-2xl place-content-center place-items-center text-center' >{s}</StickyFluoPaper>))}
           </div>
         </section>
 
         {/* Contact Section */}
         <section id="contact" className="container mx-auto px-4 py-20" ref={navigableElementsRefs.contact}>
           <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">Get in Touch</h2>
-          <div className="flex justify-center space-x-6">
-            <a href="https://github.com/kane-thornwyrd" target="_blank" rel="noopener noreferrer" className="text-stone-200 hover:text-lime-400 px-4">
-              <Github size={24} />
+          <div className="flex justify-center space-x-6 text-stone-200">
+            <a href="https://github.com/kane-thornwyrd" target="_blank" rel="noopener noreferrer" className="hover:text-lime-400 px-4">
+              <Github size={24} className='drop-shadow-intense' />
             </a>
-            <a href="https://www.linkedin.com/in/jean-c%C3%A9dric-t/" target="_blank" rel="noopener noreferrer" className="text-sky-500 hover:text-lime-400 px-4">
-              <Linkedin size={24} />
+            <a href="https://www.linkedin.com/in/jean-c%C3%A9dric-t/" target="_blank" rel="noopener noreferrer" className="hover:text-lime-400 px-4">
+              <Linkedin size={24} className='drop-shadow-intense' />
             </a>
-            <a href="mailto:jean.cedric.t+cv-link@gmail.com?subject=Prise%20de%20contact%20depuis%20le%20CV" className="text-rose-500 hover:text-lime-400 px-4">
-              <Mail size={24} />
+            <a href="mailto:jean.cedric.t+cv-link@gmail.com?subject=Prise%20de%20contact%20depuis%20le%20CV" className="hover:text-lime-400 px-4">
+              <Mail size={24} className='drop-shadow-intense' />
             </a>
           </div>
         </section>
@@ -636,22 +646,6 @@ function TimelineItem({ year, title, company, description }: { year: string, tit
   )
 }
 
-const SkillBadge : FC<{ skill : string}> = ({ skill } : { skill : string}) => {
-  const [className, setClassName] = useState<string>()
-
-  const randomPostItColour = () => POSTIT_COLOURS[randInt(POSTIT_COLOURS.length - 1)]
-
-  const newClassName = PaperCutsClassNames(undefined, `p-2 justify-center items-center flex text-center text-2xl text-stone-700 font-bold border-double border-stone-800 border-2 shadow-md shadow-black/20 ${randomPostItColour()}`)
-
-  if(!className) setClassName(newClassName);
-
-  return (
-    <div className={className}>
-      {skill}
-    </div>
-  )
-}
-
 const CVHeader = ({
   navigableElementsRefs
 } : {navigableElementsRefs : Record<string, MutableRefObject<null | HTMLElement>>}) => {
@@ -659,29 +653,37 @@ const CVHeader = ({
   const [scrollY, setScrollY] = useState<number>(0)
   const currentlySelected = useRef<HTMLElement | null>(null)
 
+  const windowRef = useRef<Window | null>(null)
+
+  useEffect(() => {
+    if(typeof window !== 'undefined' && windowRef.current === null) {
+      windowRef.current = window
+    }
+  }, [] )
+
+  const withWindow = withWindowMaker(windowRef)
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   useLayoutEffect(() => {
     const handleScroll = () => {
-      if(Math.abs(scrollY - window?.scrollY) > 50)
-        setScrollY(window?.scrollY)
+      withWindow((w) => {
+        if(Math.abs(scrollY - w.scrollY) > 50)
+          setScrollY(w.scrollY)
+      })
     }
 
     handleScroll();
-    window?.addEventListener("scroll", handleScroll)
+    withWindow((w) => {
+      w.addEventListener("scroll", handleScroll)
+    })
 
     return () => {
-      window?.removeEventListener("scroll", handleScroll)
+      withWindow((w) => {
+        w.removeEventListener("scroll", handleScroll)
+      })
     };
   }, []);
-
-  const scrollToTop = (e : { stopPropagation : Function}) => {
-    e.stopPropagation()
-    window?.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
-  }
 
   const navigateTo = (el: MutableRefObject<null | HTMLElement>) => {
     const signalClass = 'current-section'
@@ -689,9 +691,12 @@ const CVHeader = ({
     return (e : { stopPropagation : Function}) => {
       if(el.current !== null){
         e.stopPropagation()
-        window.scrollTo({
-          top: Math.round(el.current.getBoundingClientRect().top + document.documentElement.scrollTop),
-          behavior: 'smooth',
+        withWindow((w) => {
+          if(el.current !== null)
+            w.scrollTo({
+              top: Math.round(el.current.getBoundingClientRect().top + document.documentElement.scrollTop),
+              behavior: 'smooth',
+            })
         })
         
         const children = el.current.children
@@ -700,6 +705,7 @@ const CVHeader = ({
             currentlySelected.current?.classList.remove(signalClass)
             children[key].classList.add(signalClass)
             currentlySelected.current = children[key] as HTMLElement
+            setIsMenuOpen(false)
             break
           }
         }
@@ -707,7 +713,7 @@ const CVHeader = ({
     }
   }
 
-  const isWorthDisplayingLinkToTop = () => scrollY >= window?.screen.height / 2 && document.body.scrollHeight > window?.screen.height
+  const isWorthDisplayingLinkToTop = () => withWindow((w) => scrollY >= w.screen.height / 2 && document.body.scrollHeight > w.screen.height)
 
   return (
     <header className="fixed w-full z-10 backdrop-blur-md bg-stone-100/30 border-b border-stone-200 shadow-md shadow-black/50">
@@ -719,7 +725,7 @@ const CVHeader = ({
           {/* <a href="#projects" className="hover:text-stone-600 hover:underline">Projects</a> */}
           <a onClick={navigateTo(navigableElementsRefs.futur)} className="hover:text-stone-600 hover:underline cursor-pointer">What I&apos;d like to try</a>
           <a onClick={navigateTo(navigableElementsRefs.contact)} className="hover:text-stone-600 hover:underline cursor-pointer">Get in Touch</a>
-          { isWorthDisplayingLinkToTop() ? (<a onClick={scrollToTop} className="flex cursor-pointer
+          { isWorthDisplayingLinkToTop() ? (<a onClick={navigateTo(navigableElementsRefs.top)} className="flex cursor-pointer
           bg-lime-500/25 text-stone-50 hover:bg-lime-300 text-2xl place-items-center place-content-center font-black w-16 h-16 -my-6"><ArrowBigUpDash style={{'filter' : 'drop-shadow(0 0.1rem 2px rgb(0 0 0 / 0.7))'}}/></a>) : (<span className="cursor-pointer
             bg-transparent text-stone-200 text-2xl text-center place-content-center font-black w-16 h-16 -my-6"></span>) }
         </nav>
@@ -729,12 +735,12 @@ const CVHeader = ({
       </div>
       {isMenuOpen && (
         <nav className="md:hidmden backdrop-blur-md place-content-center text-center">
-          { isWorthDisplayingLinkToTop() && (<a onClick={scrollToTop} className="block px-4 py-5 hover:bg-stone-100 font-black">⇑</a>) }
-          <a href="#experience" className="block px-4 py-5 hover:bg-stone-100">Experience</a>
-          <a href="#skills" className="block px-4 py-5 hover:bg-stone-100">Skills</a>
+          { isWorthDisplayingLinkToTop() && (<a onClick={navigateTo(navigableElementsRefs.top)} className="block px-4 py-5 hover:bg-stone-100 font-black">⇑</a>) }
+          <a onClick={navigateTo(navigableElementsRefs.experience)} className="block px-4 py-5 hover:bg-stone-100">Experience</a>
+          <a onClick={navigateTo(navigableElementsRefs.skills)} className="block px-4 py-5 hover:bg-stone-100">Skills</a>
           {/* <a href="#projects" className="block px-4 py-5 hover:bg-stone-100">Projects</a> */}
-          <a href="#futur" className="block px-4 py-5 hover:bg-stone-100">What I&apos;d like to try</a>
-          <a href="#contact" className="block px-4 py-5 hover:bg-stone-100">Get in Touch</a>
+          <a onClick={navigateTo(navigableElementsRefs.futur)} className="block px-4 py-5 hover:bg-stone-100">What I&apos;d like to try</a>
+          <a onClick={navigateTo(navigableElementsRefs.contact)} className="block px-4 py-5 hover:bg-stone-100">Get in Touch</a>
         </nav>
       )}
     </header>)
