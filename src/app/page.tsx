@@ -551,7 +551,7 @@ export default function Portfolio() {
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-28 text-center print:hidden" ref={navigableElementsRefs.top}>
           <h2 className="text-7xl font-light mb-4">Senior software engineer</h2>
-          <p className={`print:hidden text-xl sketch-underline ${monoFont.className} font-light`}><span>Crafting <Typewriter
+          <p className={`text-xl sketch-underline ${monoFont.className} font-light`}><span>Crafting <Typewriter
             words={['elegant', 'robust', 'simple', 'pragmatic', 'efficient']}
             loop={false}
             cursor
@@ -647,12 +647,12 @@ export default function Portfolio() {
 
 function TimelineItem({ year, title, company, description }: { year: string, title: string, company: string, description: string | ReactNode }) {
   return (
-    <div className="relative mb-8 ml-6 print:m-0 print:pt-6">
+    <div className="mb-8 ml-6 print:m-0 print:relative print:pt-6">
       <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-white bg-lime-500 print:hidden">
         <div className="w-3 h-3 rounded-full bg-white"></div>
       </span>
       <span className="hidden absolute print:flex items-center justify-center w-6 h-6 rounded-full -left-6 top-0.5">
-        <div className='hidden w-2 h-2 bg-stone-950 rounded-full print:block'></div>
+        <div className='w-2 h-2 bg-stone-950 rounded-full'></div>
       </span>
       <h3 className="flex items-center mb-1 text-lg font-semibold text-stone-50 print:text-stone-950 print:absolute print:w-full print:mx-60 print:top-0">{title}&nbsp;@&nbsp;{company}</h3>
       <time className="block mb-2 text-sm font-normal leading-none text-gray-300 print:text-stone-950 print:absolute print:top-2">{year}</time>{typeof description === 'string' ? (<p>{description}</p>) : (<>{description}</>)}
@@ -731,7 +731,7 @@ const CVHeader = ({
     <header id="top" className="fixed w-full z-10 backdrop-blur-md bg-stone-100/30 border-b border-stone-200 shadow-md shadow-black/50 print:container print:mx-auto print:shadow-none print:relative">
       <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center print:p-0 print:justify-normal">
         <h1 className="text-2xl font-bold print:me-4">Jean-Cédric T.</h1>
-        <p>Senior software engineer</p>
+        <p className='hidden print:inline'>Senior software engineer</p>
         <nav className="relative hidden md:flex space-x-4 print:hidden">
           <a onClick={navigateTo(navigableElementsRefs.experience)} className="hover:text-stone-600 hover:underline cursor-pointer">Experience</a>
           <a onClick={navigateTo(navigableElementsRefs.skills)} className="hover:text-stone-600 hover:underline cursor-pointer">Skills</a>
@@ -789,9 +789,6 @@ const StickyFluoPaper : FC<PropsWithChildren<unknown> & { className?: string} & 
   const { children, className, ...restProps } = props
 
   const randomPostItColour = () => POSTIT_COLOURS[randInt(POSTIT_COLOURS.length - 1)]
-
-  console.log(!className?.search(/bg-/ig));
-  
 
   return (<div {...restProps} className={`sticky-fluo-paper ${className} ${!className?.search(/bg-/ig) ? '' : randomPostItColour() } `}>{children}</div>)
 }
