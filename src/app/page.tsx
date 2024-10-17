@@ -536,22 +536,22 @@ export default function Portfolio() {
   ]
 
   return (
-    <div className={`min-h-screen font-sans ${mainFont.className}`}>
+    <div className={`relative min-h-screen font-sans ${mainFont.className} print:bg-white`}>
       {bgInit && (
       <Particles
         id="tsparticles"
         options={options}
-        className='-z-40 absolute'
+        className='-z-40 absolute print:hidden'
       />)}
 
       <CVHeader {...{navigableElementsRefs}}/>
 
       {/* Main Content */}
-      <main className="pt-20 max-w-6xl mx-auto backdrop-blur-sm bg-stone-50/50">
+      <main className="pt-20 max-w-6xl mx-auto backdrop-blur-sm bg-stone-50/50 print:pt-0">
         {/* Hero Section */}
-        <section id="top" className="container mx-auto px-4 py-28 text-center" ref={navigableElementsRefs.top}>
+        <section className="container mx-auto px-4 py-28 text-center print:hidden" ref={navigableElementsRefs.top}>
           <h2 className="text-7xl font-light mb-4">Senior software engineer</h2>
-          <p className={`text-xl sketch-underline ${monoFont.className} font-light`}><span>Crafting <Typewriter
+          <p className={`print:hidden text-xl sketch-underline ${monoFont.className} font-light`}><span>Crafting <Typewriter
             words={['elegant', 'robust', 'simple', 'pragmatic', 'efficient']}
             loop={false}
             cursor
@@ -563,9 +563,9 @@ export default function Portfolio() {
         </section>
 
         {/* Experience Timeline */}
-        <section id="experience" className="container mx-auto px-4 py-20" ref={navigableElementsRefs.experience}>
+        <section id="experience" className="container mx-auto px-4 py-20 print:p-0" ref={navigableElementsRefs.experience}>
           <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">Experience</h2>
-          <div className="relative border-l-2 border-stone-200 ml-3">
+          <div className="relative border-l-2 border-stone-200 ml-3 print:border-none print:m-0">
             {timelineEntries.map((e, i) => (
             <TimelineItem {...e} key={i}/>
             ))}
@@ -620,6 +620,20 @@ export default function Portfolio() {
             </a>
           </div>
         </section>
+
+        
+        <div className="back-to-top-wrapper absolute -right-5 bottom-6 w-16 pointer-events-none print:hidden">
+          <a aria-label="Scroll to Top" className="back-to-top-link" onClick={(e) => {
+            e.stopPropagation();
+            const el = document.getElementById('top')
+            if(el && window) {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              })
+            }
+          }}><ArrowBigUpDash style={{'filter' : 'drop-shadow(0 0.1rem 2px rgb(0 0 0 / 0.7))'}}/></a>
+        </div>
       </main>
 
       {/* Footer */}
@@ -633,12 +647,15 @@ export default function Portfolio() {
 
 function TimelineItem({ year, title, company, description }: { year: string, title: string, company: string, description: string | ReactNode }) {
   return (
-    <div className="mb-8 ml-6">
-      <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-white bg-lime-500">
+    <div className="relative mb-8 ml-6 print:m-0 print:pt-6">
+      <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-white bg-lime-500 print:hidden">
         <div className="w-3 h-3 rounded-full bg-white"></div>
       </span>
-      <h3 className="flex items-center mb-1 text-lg font-semibold text-stone-50">{title}&nbsp;@&nbsp;{company}</h3>
-      <time className="block mb-2 text-sm font-normal leading-none text-gray-300">{year}</time>{typeof description === 'string' ? (<p>{description}</p>) : (<>{description}</>)}
+      <span className="hidden absolute print:flex items-center justify-center w-6 h-6 rounded-full -left-6 top-0.5">
+        <div className='hidden w-2 h-2 bg-stone-950 rounded-full print:block'></div>
+      </span>
+      <h3 className="flex items-center mb-1 text-lg font-semibold text-stone-50 print:text-stone-950 print:absolute print:w-full print:mx-60 print:top-0">{title}&nbsp;@&nbsp;{company}</h3>
+      <time className="block mb-2 text-sm font-normal leading-none text-gray-300 print:text-stone-950 print:absolute print:top-2">{year}</time>{typeof description === 'string' ? (<p>{description}</p>) : (<>{description}</>)}
     </div>
   )
 }
@@ -710,28 +727,24 @@ const CVHeader = ({
     }
   }
 
-  const isWorthDisplayingLinkToTop = () => withWindow((w) =>  scrollY >= w.screen.height / 2 && document.body.scrollHeight > w.screen.height)
-
   return (
-    <header className="fixed w-full z-10 backdrop-blur-md bg-stone-100/30 border-b border-stone-200 shadow-md shadow-black/50">
-      <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Jean-Cédric T.</h1>
-        <nav className="relative hidden md:flex space-x-4">
+    <header id="top" className="fixed w-full z-10 backdrop-blur-md bg-stone-100/30 border-b border-stone-200 shadow-md shadow-black/50 print:container print:mx-auto print:shadow-none print:relative">
+      <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center print:p-0 print:justify-normal">
+        <h1 className="text-2xl font-bold print:me-4">Jean-Cédric T.</h1>
+        <p>Senior software engineer</p>
+        <nav className="relative hidden md:flex space-x-4 print:hidden">
           <a onClick={navigateTo(navigableElementsRefs.experience)} className="hover:text-stone-600 hover:underline cursor-pointer">Experience</a>
           <a onClick={navigateTo(navigableElementsRefs.skills)} className="hover:text-stone-600 hover:underline cursor-pointer">Skills</a>
           {/* <a href="#projects" className="hover:text-stone-600 hover:underline">Projects</a> */}
           <a onClick={navigateTo(navigableElementsRefs.futur)} className="hover:text-stone-600 hover:underline cursor-pointer">What I&apos;d like to try</a>
           <a onClick={navigateTo(navigableElementsRefs.contact)} className="hover:text-stone-600 hover:underline cursor-pointer">Get in Touch</a>
-          <a onClick={navigateTo(navigableElementsRefs.top)} className="flex cursor-pointer
-          bg-lime-500/25 text-stone-50 hover:bg-lime-300 text-2xl place-items-center place-content-center font-black w-16 h-16 -my-6"><ArrowBigUpDash style={{'filter' : 'drop-shadow(0 0.1rem 2px rgb(0 0 0 / 0.7))'}}/></a>
         </nav>
-        <button onClick={toggleMenu} className="md:hidden">
+        <button onClick={toggleMenu} className="print:hidden md:hidden">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       {isMenuOpen && (
         <nav className="md:hidmden backdrop-blur-md place-content-center text-center">
-          { isWorthDisplayingLinkToTop() && (<a onClick={navigateTo(navigableElementsRefs.top)} className="block px-4 py-5 hover:bg-stone-100 font-black">⇑</a>) }
           <a onClick={navigateTo(navigableElementsRefs.experience)} className="block px-4 py-5 hover:bg-stone-100">Experience</a>
           <a onClick={navigateTo(navigableElementsRefs.skills)} className="block px-4 py-5 hover:bg-stone-100">Skills</a>
           {/* <a href="#projects" className="block px-4 py-5 hover:bg-stone-100">Projects</a> */}
@@ -760,7 +773,7 @@ const PostDefinitionList: FC<{definitions: Record<string, string[]>}> = ({defini
   <dl className='grid grid-cols-1 md:grid-cols-2 gap-4'>
     {Object.entries(definitions).map(([term, content], index) => (
       <div key={index}>
-        <StickyFluoPaper>
+        <StickyFluoPaper className='bg-stone-200'>
           <dt className='text-xl font-thin text-stone-500 m-1'>{term}</dt>
           <dd>
             <ul className='flex flex-wrap'>
@@ -775,7 +788,12 @@ const PostDefinitionList: FC<{definitions: Record<string, string[]>}> = ({defini
 const StickyFluoPaper : FC<PropsWithChildren<unknown> & { className?: string} & Record<string, unknown>> = (props) => {
   const { children, className, ...restProps } = props
 
-  return (<div {...restProps} className={`sticky-fluo-paper ${className}`}>{children}</div>)
+  const randomPostItColour = () => POSTIT_COLOURS[randInt(POSTIT_COLOURS.length - 1)]
+
+  console.log(!className?.search(/bg-/ig));
+  
+
+  return (<div {...restProps} className={`sticky-fluo-paper ${className} ${!className?.search(/bg-/ig) ? '' : randomPostItColour() } `}>{children}</div>)
 }
 
 const PaperCutsClassNames = (altern : () => boolean =  () => !!randInt(), className : string = 'bg-stone-100 shadow-sm shadow-black/50') => `px-4 py-1 m-1 ${altern() ?'rotate-1 -skew-y-1':'-rotate-1 skew-y-1'} ${className}`

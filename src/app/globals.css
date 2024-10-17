@@ -13,6 +13,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -58,6 +64,25 @@ body {
   }
 }
 
+@media screen {
+
+.back-to-top-wrapper {
+  top: 100vh;
+}
+
+.back-to-top-link {
+  top: calc(100vh - 5rem);
+  pointer-events: all;
+  position: fixed;
+  position: sticky;
+  @apply flex cursor-pointer rounded-full
+  bg-lime-500/25 text-stone-50 hover:bg-lime-300 text-2xl place-items-center place-content-center font-black w-16 h-16 -my-6;
+
+  &:hover>* {
+    @apply animate-bounce;
+  }
+}
+
 .sketch-underline {
   position: relative;
 }
@@ -70,25 +95,53 @@ body {
 
 
 .postIt-orange {
-  @apply bg-orange-200
+  box-shadow:
+    inset 0 -2rem 3rem rgba(141, 120, 97, 0.2),
+    inset 0 1.25rem 1rem rgb(202, 172, 137),
+    0 1.25rem 1.2rem 0.1rem rgba(0,0,0,0.2) !important;
+  @apply bg-orange-200;
 }
 .postIt-yellow {
-  @apply bg-yellow-100
+  box-shadow:
+    inset 0 -2rem 3rem rgba(87, 85, 67, 0.2),
+    inset 0 1.25rem 1rem rgb(201, 197, 155),
+    0 1.25rem 1.2rem 0.1rem rgba(0,0,0,0.2) !important;
+  @apply bg-yellow-100;
 }
 .postIt-lime {
-  @apply bg-lime-100
+  box-shadow:
+    inset 0 -2rem 3rem rgba(91, 97, 79, 0.2),
+    inset 0 1.25rem 1rem rgb(190, 203, 165),
+    0 1.25rem 1.2rem 0.1rem rgba(0,0,0,0.2) !important;
+  @apply bg-lime-100;
 }
 .postIt-green {
-  @apply bg-green-100
+  box-shadow:
+    inset 0 -2rem 3rem rgba(89, 101, 93, 0.2),
+    inset 0 1.25rem 1rem rgb(175, 199, 183),
+    0 1.25rem 1.2rem 0.1rem rgba(0,0,0,0.2) !important;
+  @apply bg-green-100;
 }
 .postIt-cyan {
-  @apply bg-cyan-100
+  box-shadow:
+    inset 0 -2rem 3rem rgba(71, 86, 87, 0.2),
+    inset 0 1.25rem 1rem rgb(163, 195, 198),
+    0 1.25rem 1.2rem 0.1rem rgba(0,0,0,0.2) !important;
+  @apply bg-cyan-100;
 }
 .postIt-violet {
-  @apply bg-violet-100
+  box-shadow:
+    inset 0 -2rem 3rem rgba(123, 121, 131, 0.2),
+    inset 0 1.25rem 1rem rgb(191, 188, 207),
+    0 1.25rem 1.2rem 0.1rem rgba(0,0,0,0.2) !important;
+  @apply bg-violet-100;
 }
 .postIt-rose {
-  @apply bg-rose-100
+  box-shadow:
+    inset 0 -2rem 3rem rgba(95, 87, 87, 0.2),
+    inset 0 1.25rem 1rem rgb(202, 182, 184),
+    0 1.25rem 1.2rem 0.1rem rgba(0,0,0,0.2) !important;
+  @apply bg-rose-100;
 }
 
 #contact a:hover > * {
@@ -100,10 +153,9 @@ body {
   padding: 1.25rem .5rem .5rem .5rem;
   border-radius: 0.15rem;
   box-shadow:
-    inset 0 -2rem 3rem rgb(245 245 244 / 0.2),
-    inset 0 1.25rem 1rem rgb(214 211 209 / 1),
+    inset 0 -2rem 3rem rgba(91, 90, 90, 0.2),
+    inset 0 1.25rem 1rem rgb(184, 183, 183),
     0 1.25rem 1.2rem 0.1rem rgba(0,0,0,0.2);
-  @apply bg-stone-200;
 }
 
 .ambulance {
@@ -134,4 +186,6 @@ body {
 
 .drop-shadow-intense {
   filter : drop-shadow(0 0.1rem 2px rgb(0 0 0 / 0.8))
+}
+
 }
