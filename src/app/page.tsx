@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, ReactNode, useEffect, useMemo, useState, PropsWithChildren, useRef, useLayoutEffect, MutableRefObject, DOMElement, MouseEventHandler } from 'react'
+import { FC, ReactNode, useEffect, useMemo, useState, PropsWithChildren, useRef, useLayoutEffect, MutableRefObject, DOMElement, MouseEventHandler, useCallback, useSyncExternalStore, LinkHTMLAttributes, HTMLProps } from 'react'
 import { Menu, X, Linkedin, Mail, Github, Ambulance, ArrowBigUpDash } from 'lucide-react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import {   type Container,
@@ -8,7 +8,7 @@ import {   type Container,
   OutMode } from '@tsparticles/engine'
 import { loadSlim } from "@tsparticles/slim"
 import { Typewriter } from 'react-simple-typewriter'
-import { Urbanist as GFont, Roboto_Slab as MonoFont } from 'next/font/google'
+import { Urbanist as GFont, Josefin_Slab as MonoFont } from 'next/font/google'
 
 const mainFont = GFont({
   subsets: ['latin']
@@ -33,8 +33,12 @@ const withWindowMaker : (ref: MutableRefObject<Window | null>) => <T extends (w:
   return ref.current !== null ? cb(ref.current) : undefined
 }
 
+const stringIntValue = (s: string): number => s.split('').map(v => v.charCodeAt(0)).reduce((prev, curr) => prev + curr)
+
 export default function Portfolio() {
   const [bgInit, setBgInit] = useState<boolean>(false)
+
+  const isBiggerthanSmartphone = useMediaQuery('@media (min-width: 640px)')
 
   const navigableElementsRefs = {
     top: useRef(null),
@@ -45,12 +49,13 @@ export default function Portfolio() {
   }
 
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setBgInit(true);
-    });
-  }, []);
+    // if(isBiggerthanSmartphone){
+      initParticlesEngine(
+        async(engine) => await loadSlim(engine)
+      )
+      .then(() => setBgInit(true))
+    // }
+  }, [isBiggerthanSmartphone]);
   
   const options = useMemo(
     () => ({
@@ -305,7 +310,7 @@ export default function Portfolio() {
       title: 'Fullstack Developper'
     },
     {
-      year: 'mar. 2016 ⇒ may 2016',
+      year: 'mar. 2016 ⇒ may 2016 (Fixed-term contract)',
       company: 'FORMA-DIS',
       description: (
       <PostDefinitionList definitions={{
@@ -343,10 +348,10 @@ export default function Portfolio() {
           'JS Guidance'
         ],
         'Usages': [
-          'Various',
+          '[to be filled]',
         ],
         'Architectures': [
-          'Various',
+          '[to be filled]',
         ],
         'Technologies': [
           'Babel.js',
@@ -378,7 +383,7 @@ export default function Portfolio() {
           'Full autonomy under the frontend manager',
         ],
         'Architectures': [
-          'Various',
+          '[to be filled]',
         ],
         'Technologies': [
           'Require.js',
@@ -400,13 +405,13 @@ export default function Portfolio() {
       company: 'YGL CONSULTING',
       description: (<PostDefinitionList definitions={{
         'Deeds': [
-          'Various'
+          '[to be filled]'
         ],
         'Usages': [
-          'Various'
+          '[to be filled]'
         ],
         'Architectures': [
-          'Various',
+          '[to be filled]',
         ],
         'Technologies': [
           'Require.js',
@@ -428,13 +433,13 @@ export default function Portfolio() {
       company: 'Alter Way',
       description: (<PostDefinitionList definitions={{
         'Deeds': [
-          'Various'
+          '[to be filled]'
         ],
         'Usages': [
-          'Various'
+          '[to be filled]'
         ],
         'Architectures': [
-          'Various',
+          '[to be filled]',
         ],
         'Technologies': [
           'Drupal',
@@ -454,17 +459,17 @@ export default function Portfolio() {
       title: 'Web Dev Drupal/PHP/JS/Dev Ops'
     },
     {
-      year: 'sep. 2007 (skipped a semester due to the entrance test results) ⇒ oct. 2009',
+      year: 'sep. 2007 ⇒ oct. 2009',
       company: 'IN\'Tech INFO - Software engineering course',
       description: (<PostDefinitionList definitions={{
         'Deeds': [
-          'Various'
+          '[to be filled]'
         ],
         'Usages': [
-          'Various'
+          '[to be filled]'
         ],
         'Architectures': [
-          'Various',
+          '[to be filled]',
         ],
         'Technologies': [
           'Drupal',
@@ -529,29 +534,31 @@ export default function Portfolio() {
   const futurList: string[] = [
     'More Functional Programing !',
     'FP-TS',
-    'Elixir',
     'Elm',
-    'Erlang',
     'Haskell',
   ]
 
+  const sectionTitleClassNames = 'text-3xl font-bold mb-8 text-center border-spacing-2 border-l-[2.25rem] border-l-lime-500 text-lime-500 max-w-fit pl-3 print:text-black print:border-l-stone-700 print:text-xl print:border-l print:mb-3'
+
+  const sectionClassNames = 'container mx-auto md:px-4 py-20 print:p-0 print:mt-10'
+
   return (
-    <div className={`relative min-h-screen font-sans ${mainFont.className} print:bg-white`}>
+    <div className={`relative bg-stone-900 md:bg-transparent min-h-screen font-sans ${mainFont.className} print:bg-white`}>
       {bgInit && (
       <Particles
         id="tsparticles"
         options={options}
-        className='-z-40 absolute print:hidden'
+        className='-z-40 absolute hidden md:block print:hidden'
       />)}
 
       <CVHeader {...{navigableElementsRefs}}/>
 
       {/* Main Content */}
-      <main className="pt-20 max-w-6xl mx-auto backdrop-blur-sm bg-stone-50/50 print:pt-0">
+      <main className="pt-20 max-w-6xl mx-auto backdrop-blur-sm bg-gradient-to-br from-stone-200/40 to-stone-200/70 md:bg-gradient-to-b md:from-stone-100/50 md:to-stone-100/50 print:pt-0">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-28 text-center print:hidden" ref={navigableElementsRefs.top}>
           <h2 className="text-7xl font-light mb-4">Senior software engineer</h2>
-          <p className={`text-xl sketch-underline ${monoFont.className} font-light`}><span>Crafting <Typewriter
+          <p className={`text-xl font-bold sketch-underline max-w-fit mx-auto px-12 text-center ${monoFont.className}`}>Crafting <Typewriter
             words={['elegant', 'robust', 'simple', 'pragmatic', 'efficient']}
             loop={false}
             cursor
@@ -559,13 +566,13 @@ export default function Portfolio() {
             typeSpeed={70}
             deleteSpeed={50}
             delaySpeed={2000}
-          />solutions since 2009</span></p>
+          />solutions since 2009</p>
         </section>
 
         {/* Experience Timeline */}
-        <section id="experience" className="container mx-auto px-4 py-20 print:p-0" ref={navigableElementsRefs.experience}>
-          <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">Experience</h2>
-          <div className="relative border-l-2 border-stone-200 ml-3 print:border-none print:m-0">
+        <section id="experience" className={`${sectionClassNames}`} ref={navigableElementsRefs.experience}>
+          <h2 className={`${sectionTitleClassNames}`} >Experience</h2>
+          <div className="timeline">
             {timelineEntries.map((e, i) => (
             <TimelineItem {...e} key={i}/>
             ))}
@@ -573,57 +580,43 @@ export default function Portfolio() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="container mx-auto md:px-4 py-20" ref={navigableElementsRefs.skills}>
-          <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">Skills</h2>
-          <div className="flex flex-row flex-wrap place-content-evenly place-items-center gap-3 md:gap-5">
-            {skillList.map((s,i) => (<StickyFluoPaper key={i} className='flex md:aspect-square md:w-40 md:h-40 font-light text-2xl place-content-center place-items-center text-center' >{s}</StickyFluoPaper>))}
+        <section id="skills" className={`${sectionClassNames}`} ref={navigableElementsRefs.skills}>
+          <h2 className={`${sectionTitleClassNames}`}>Skills</h2>
+          <div className="flex flex-row flex-wrap place-content-evenly place-items-center gap-3 md:gap-5 print:inline-block print:gap-0">
+            {skillList.map((s,i) => (<StickyFluoPaper horizontal key={i} className='flex font-light place-content-center place-items-center text-center print:inline-block print:float-left print:w-fit print:h-fit print:aspect-auto' >{s}</StickyFluoPaper>))}
           </div>
         </section>
-
-        {/* Projects Showcase */}
-        {/* <section id="projects" className="container mx-auto px-4 py-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <ProjectCard
-              title="AI-Powered Analytics Dashboard"
-              description="Developed a real-time analytics dashboard using machine learning algorithms to predict user behavior and optimize business processes."
-              technologies={['React', 'Python', 'TensorFlow', 'AWS']}
-            />
-            <ProjectCard
-              title="Blockchain-based Supply Chain Solution"
-              description="Created a decentralized application to track and verify product authenticity throughout the supply chain, enhancing transparency and reducing fraud."
-              technologies={['Solidity', 'Ethereum', 'Node.js', 'React']}
-            />
-          </div>
-        </section> */}
         
         {/* Futur */}
-        <section id="futur" className="container mx-auto px-4 py-20" ref={navigableElementsRefs.futur}>
-          <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">What I&apos;d like to try</h2>
-          <div className="flex flex-row flex-wrap place-content-evenly place-items-center gap-3 md:gap-10">
-            {futurList.map((s,i) => (<StickyFluoPaper key={i} className='flex md:aspect-square md:w-40 md:h-40 font-light text-2xl place-content-center place-items-center text-center' >{s}</StickyFluoPaper>))}
+        <section id="futur" className={`${sectionClassNames}`} ref={navigableElementsRefs.futur}>
+          <h2 className={`${sectionTitleClassNames}`}>What I&apos;d like to try</h2>
+          <div className="flex flex-row flex-wrap place-content-evenly place-items-center gap-3 md:gap-10 print:inline-block print:gap-0">
+            {futurList.map((s,i) => (<StickyFluoPaper key={i} className='flex md:w-40 md:h-40 font-light text-2xl place-content-center place-items-center text-center print:inline-block print:float-left print:w-fit print:h-fit print:aspect-auto' >{s}</StickyFluoPaper>))}
           </div>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="container mx-auto px-4 py-20" ref={navigableElementsRefs.contact}>
-          <h2 className="text-3xl font-bold mb-8 text-center border-spacing-2 border-b-2 border-stone-800">Get in Touch</h2>
-          <div className="flex justify-center space-x-6 text-stone-200">
-            <a href="https://github.com/kane-thornwyrd" target="_blank" rel="noopener noreferrer" className="hover:text-lime-400 px-4">
+        <section id="contact" className={`${sectionClassNames} print:mb-40`} ref={navigableElementsRefs.contact}>
+          <h2 className={`${sectionTitleClassNames}`}>Get in Touch</h2>
+          <div className="flex justify-center space-x-6 text-stone-200 print:text-black print:grid print:grid-cols-3">
+            <PrintableLink href="https://github.com/kane-thornwyrd" target="_blank" rel="noopener noreferrer" 
+            hrefReadable='kane-thornwyrd' className="hover:text-lime-400 px-4">
               <Github size={24} className='drop-shadow-intense' />
-            </a>
-            <a href="https://www.linkedin.com/in/jean-c%C3%A9dric-t/" target="_blank" rel="noopener noreferrer" className="hover:text-lime-400 px-4">
+            </PrintableLink>
+            <PrintableLink href="https://www.linkedin.com/in/jean-c%C3%A9dric-t/" target="_blank" rel="noopener noreferrer"
+            hrefReadable='jean-cédric-t' className="hover:text-lime-400 px-4">
               <Linkedin size={24} className='drop-shadow-intense' />
-            </a>
-            <a href="mailto:jean.cedric.t+cv-link@gmail.com?subject=Prise%20de%20contact%20depuis%20le%20CV" className="hover:text-lime-400 px-4">
+            </PrintableLink>
+            <PrintableLink href="mailto:jean.cedric.t+cv-link@gmail.com?subject=Prise%20de%20contact%20depuis%20le%20CV" 
+            hrefReadable='jean.cedric.t+via-cv@gmail.com' className="hover:text-lime-400 px-4">
               <Mail size={24} className='drop-shadow-intense' />
-            </a>
+            </PrintableLink>
           </div>
         </section>
 
         
-        <div className="back-to-top-wrapper absolute -right-5 bottom-6 w-16 pointer-events-none print:hidden">
-          <a aria-label="Scroll to Top" className="back-to-top-link" onClick={(e) => {
+        <div className="back-to-top-wrapper absolute right-4 bottom-6 w-16 pointer-events-none print:hidden">
+          <a aria-label="Scroll to Top" className="back-to-top-link backdrop-blur-md" onClick={(e) => {
             e.stopPropagation();
             const el = document.getElementById('top')
             if(el && window) {
@@ -637,7 +630,7 @@ export default function Portfolio() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-stone-400 py-4 text-center" >
+      <footer className="bg-stone-400 py-4 text-center print:hidden" >
         <p>&copy; 2024 Jean-cédric T. All rights reserved.</p>
       </footer>
       
@@ -647,15 +640,16 @@ export default function Portfolio() {
 
 function TimelineItem({ year, title, company, description }: { year: string, title: string, company: string, description: string | ReactNode }) {
   return (
-    <div className="mb-8 ml-6 print:m-0 print:relative print:pt-6">
-      <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-white bg-lime-500 print:hidden">
+    <div className="mb-8 md:ml-6 print:m-0 print:relative print:pt-6 print:mt-3">
+      <span className="hidden md:flex absolute items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-transparent bg-lime-500 print:hidden">
         <div className="w-3 h-3 rounded-full bg-white"></div>
       </span>
       <span className="hidden absolute print:flex items-center justify-center w-6 h-6 rounded-full -left-6 top-0.5">
         <div className='w-2 h-2 bg-stone-950 rounded-full'></div>
       </span>
-      <h3 className="flex items-center mb-1 text-lg font-semibold text-stone-50 print:text-stone-950 print:absolute print:w-full print:mx-60 print:top-0">{title}&nbsp;@&nbsp;{company}</h3>
-      <time className="block mb-2 text-sm font-normal leading-none text-gray-300 print:text-stone-950 print:absolute print:top-2">{year}</time>{typeof description === 'string' ? (<p>{description}</p>) : (<>{description}</>)}
+      <time className="block ml-2 md:ml-0 mb-2 text-sm font-normal leading-none text-gray-300 print:text-stone-950 print:absolute print:top-2">{year}</time>
+      <h3 className="flex items-center max-w-fit md:max-w-none mx-auto mb-1 text-lg font-semibold text-stone-50 print:text-stone-950 print:absolute print:text-right print:top-0 print:right-0 print:block">{title}&nbsp;@&nbsp;{company}</h3>
+      {typeof description === 'string' ? (<p>{description}</p>) : (<>{description}</>)}
     </div>
   )
 }
@@ -728,23 +722,22 @@ const CVHeader = ({
   }
 
   return (
-    <header id="top" className="fixed w-full z-10 backdrop-blur-md bg-stone-100/30 border-b border-stone-200 shadow-md shadow-black/50 print:container print:mx-auto print:shadow-none print:relative">
-      <div className="container max-w-5xl mx-auto px-4 py-4 flex justify-between items-center print:p-0 print:justify-normal">
+    <header id="top" className="fixed w-full z-10 bg-transparent print:container print:mx-auto print:shadow-none print:relative print:mb-6">
+      <div className="container backdrop-blur-sm max-w-6xl mx-auto px-6 md:px-40 flex justify-between items-center print:p-0 print:justify-normal bg-gradient-to-b from-stone-50/10 to-stone-400/10 shadow-xl shadow-black/30 print:bg-none print:shadow-none">
         <h1 className="text-2xl font-bold print:me-4">Jean-Cédric T.</h1>
         <p className='hidden print:inline'>Senior software engineer</p>
-        <nav className="relative hidden md:flex space-x-4 print:hidden">
-          <a onClick={navigateTo(navigableElementsRefs.experience)} className="hover:text-stone-600 hover:underline cursor-pointer">Experience</a>
-          <a onClick={navigateTo(navigableElementsRefs.skills)} className="hover:text-stone-600 hover:underline cursor-pointer">Skills</a>
-          {/* <a href="#projects" className="hover:text-stone-600 hover:underline">Projects</a> */}
-          <a onClick={navigateTo(navigableElementsRefs.futur)} className="hover:text-stone-600 hover:underline cursor-pointer">What I&apos;d like to try</a>
-          <a onClick={navigateTo(navigableElementsRefs.contact)} className="hover:text-stone-600 hover:underline cursor-pointer">Get in Touch</a>
+        <nav className="relative hidden md:flex print:hidden">
+          <a onClick={navigateTo(navigableElementsRefs.experience)} className="cursor-pointer p-3 hover:bg-gradient-to-b hover:from-stone-50/50 hover:to-stone-500/20">Experience</a>
+          <a onClick={navigateTo(navigableElementsRefs.skills)} className="cursor-pointer p-3 hover:bg-gradient-to-b hover:from-stone-50/50 hover:to-stone-500/20">Skills</a>
+          <a onClick={navigateTo(navigableElementsRefs.futur)} className="cursor-pointer p-3 hover:bg-gradient-to-b hover:from-stone-50/50 hover:to-stone-500/20">What I&apos;d like to try</a>
+          <a onClick={navigateTo(navigableElementsRefs.contact)} className="cursor-pointer p-3 hover:bg-gradient-to-b hover:from-stone-50/50 hover:to-stone-500/20">Get in Touch</a>
         </nav>
         <button onClick={toggleMenu} className="print:hidden md:hidden">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       {isMenuOpen && (
-        <nav className="md:hidmden backdrop-blur-md place-content-center text-center">
+        <nav className="relative md:hidmden backdrop-blur-md place-content-center text-center border-b-2 border-t-2 border-stone-50 -z-50 bg-gradient-to-b from-stone-200/60 to-stone-100/60  cursor-pointer">
           <a onClick={navigateTo(navigableElementsRefs.experience)} className="block px-4 py-5 hover:bg-stone-100">Experience</a>
           <a onClick={navigateTo(navigableElementsRefs.skills)} className="block px-4 py-5 hover:bg-stone-100">Skills</a>
           {/* <a href="#projects" className="block px-4 py-5 hover:bg-stone-100">Projects</a> */}
@@ -770,14 +763,14 @@ const CVHeader = ({
 // }
 
 const PostDefinitionList: FC<{definitions: Record<string, string[]>}> = ({definitions}) => (
-  <dl className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+  <dl className='grid grid-cols-1 md:grid-cols-2 gap-4 print:grid-cols-1 print:gap-0 print:border print:p-1'>
     {Object.entries(definitions).map(([term, content], index) => (
       <div key={index}>
-        <StickyFluoPaper className='bg-stone-200'>
-          <dt className='text-xl font-thin text-stone-500 m-1'>{term}</dt>
+        <StickyFluoPaper className='bg-stone-200 print:bg-white'>
+          <dt className='text-xl font-thin text-stone-500 m-1 print:font-normal print:underline print:m-0'>{term}</dt>
           <dd>
-            <ul className='flex flex-wrap'>
-            {content.map((v, i) => (<li key={i} className={PaperCutsClassNames(() => !!(i%2))}>{v}</li>))}
+            <ul className='flex flex-wrap print:inline-block'>
+            {content.map((v, i) => (<li key={i} className={PaperCutsClassNames(() => !!(i%2), 'print:shadow-none print:py-0 print:m-auto print:float-left')}>{v}</li>))}
             </ul>
           </dd>
         </StickyFluoPaper>
@@ -785,14 +778,43 @@ const PostDefinitionList: FC<{definitions: Record<string, string[]>}> = ({defini
     ))}
   </dl>)
 
-const StickyFluoPaper : FC<PropsWithChildren<unknown> & { className?: string} & Record<string, unknown>> = (props) => {
-  const { children, className, ...restProps } = props
+const StickyFluoPaper : FC<HTMLProps<HTMLDivElement> &  PropsWithChildren<unknown> & { horizontal?: boolean}> = (props) => {
+  const {horizontal , children, className, ...restProps } = props
 
-  const randomPostItColour = () => POSTIT_COLOURS[randInt(POSTIT_COLOURS.length - 1)]
+  const randomPostItColour = (seed: number) => POSTIT_COLOURS[randInt(POSTIT_COLOURS.length - 1, seed)]
+  
 
-  return (<div {...restProps} className={`sticky-fluo-paper ${className} ${!className?.search(/bg-/ig) ? '' : randomPostItColour() } `}>{children}</div>)
+  return (<div {...restProps} className={`${horizontal ? 'sticky-fluo-paper-horizontal' : 'sticky-fluo-paper'} ${className} ${!className?.search(/bg-/ig) ? '' : randomPostItColour(stringIntValue(children!.toString()))}`}>{children}</div>)
 }
 
-const PaperCutsClassNames = (altern : () => boolean =  () => !!randInt(), className : string = 'bg-stone-100 shadow-sm shadow-black/50') => `px-4 py-1 m-1 ${altern() ?'rotate-1 -skew-y-1':'-rotate-1 skew-y-1'} ${className}`
+const PaperCutsClassNames = (altern : () => boolean, className? : string) => `px-4 py-1 m-1 ${altern() ?'rotate-2 -skew-y-2':'-rotate-2 skew-y-2'} ${'bg-stone-100 shadow-sm shadow-stone-800/25 print:skew-none print:rotate-none ' + className}`
 
-const randInt = (max : number = 1) => Math.round(Math.random() * Math.trunc(max))
+const randInt = (max : number = 1, seed: number) =>{ 
+  const output = Math.trunc(seed.toString().split('').map(v=>v as unknown as number).reduce((p,c)=> p+c) % 17 / 16 * max)
+  return output
+}
+
+const useMediaQuery = (query: string) => {
+  const subscribe = useCallback(
+    (callback: (this: MediaQueryList, ev: MediaQueryListEvent) => any) => {
+      const matchMedia = window.matchMedia(query)
+
+      matchMedia.addEventListener("change", callback)
+
+      return () => matchMedia.removeEventListener("change", callback)
+    },
+    [query]
+  );
+
+  const getSnapshot = () => window.matchMedia(query).matches
+
+  const getServerSnapshot = () => false
+
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+}
+
+const PrintableLink: FC<HTMLProps<HTMLAnchorElement> & PropsWithChildren & { hrefReadable?: string }> = ({ hrefReadable, children, className, ...props}) => {
+  const newClassName = className + ' printable-link'
+  
+  
+  return (<a className={newClassName} href-readable={!!hrefReadable ? hrefReadable : decodeURI(props.href as string)} {...props}>{children}</a> )}
