@@ -345,13 +345,8 @@ export default function Portfolio() {
       company: 'YGL CONSULTING',
       description: (<PostDefinitionList definitions={{
         'Deeds': [
-          'JS Guidance'
-        ],
-        'Usages': [
-          '[to be filled]',
-        ],
-        'Architectures': [
-          '[to be filled]',
+          'JS Guidance',
+          'Consulting',
         ],
         'Technologies': [
           'Babel.js',
@@ -367,7 +362,6 @@ export default function Portfolio() {
     {
       year: 'juil. 2013 ⇒ oct. 2015',
       company: 'Cellfish Media',
-
       title: 'Senior JS Developer / Drupal Adviser',
       description: (<PostDefinitionList definitions={{
         'Deeds': [
@@ -383,19 +377,20 @@ export default function Portfolio() {
           'Full autonomy under the frontend manager',
         ],
         'Architectures': [
-          '[to be filled]',
+          'MVC',
+          'Decoupled frontend/backend'
         ],
         'Technologies': [
-          'Require.js',
-          'jQuery',
           'Babel.js',
-          'Bootstrap',
           'Backbone.js',
-          'Underscore.js',
+          'Bootstrap',
           'Grunt.js',
           'Gulp',
-          'SQL',
           'JavaScript',
+          'jQuery',
+          'Require.js',
+          'SQL',
+          'Underscore.js',
         ],
       }}/>
     ),
@@ -405,25 +400,22 @@ export default function Portfolio() {
       company: 'YGL CONSULTING',
       description: (<PostDefinitionList definitions={{
         'Deeds': [
-          '[to be filled]'
-        ],
-        'Usages': [
-          '[to be filled]'
-        ],
-        'Architectures': [
-          '[to be filled]',
+          'Implementing complex update process for the channel programming schedule in a performance sensitive environment (tv set-top boxes) @ Canal+ Group',
+          'Implementing the authentication and access-control list layer in a performance sensitive environment (tv set-top boxes) @ Canal+ Group',
+          'Designing and instancing a communication hub for unions @ ManpowerGroup'
         ],
         'Technologies': [
-          'Require.js',
-          'jQuery',
           'Babel.js',
-          'Bootstrap',
           'Backbone.js',
-          'Underscore.js',
+          'Bootstrap',
+          'Drupal',
           'Grunt.js',
           'Gulp',
-          'SQL',
           'JavaScript',
+          'jQuery',
+          'Require.js',
+          'SQL',
+          'Underscore.js',
         ],
       }}/>),
       title: 'Web Developer/Drupal Expert'
@@ -442,16 +434,16 @@ export default function Portfolio() {
           '[to be filled]',
         ],
         'Technologies': [
-          'Drupal',
           'AHAH',
-          'jQuery',
+          'Apache',
           'Bootstrap',
+          'Drupal',
           'Ext.js',
-          'jQuery-UI',
           'Grunt.js',
           'Gulp',
+          'jQuery-UI',
+          'jQuery',
           'LAMP',
-          'Apache',
           'MySQL',
           'PHP',
         ],
@@ -466,22 +458,23 @@ export default function Portfolio() {
           '[to be filled]'
         ],
         'Usages': [
-          '[to be filled]'
+          'TDD',
+
         ],
         'Architectures': [
           '[to be filled]',
         ],
         'Technologies': [
-          'Drupal',
           'AHAH',
-          'jQuery',
+          'Apache',
           'Bootstrap',
+          'Drupal',
           'Ext.js',
-          'jQuery-UI',
           'Grunt.js',
           'Gulp',
+          'jQuery-UI',
+          'jQuery',
           'LAMP',
-          'Apache',
           'MySQL',
           'PHP',
         ],
