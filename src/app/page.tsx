@@ -390,7 +390,7 @@ export default function Portfolio() {
     },
     {
       year: "oct. 2015 ⇒ mar. 2016",
-      company: "YGL CONSULTING",
+      company: "YGL CONSULTING (DSC)",
       description: (
         <PostDefinitionList
           definitions={{
@@ -446,7 +446,7 @@ export default function Portfolio() {
     },
     {
       year: "jan. 2012 ⇒ feb. 2014",
-      company: "YGL CONSULTING",
+      company: "YGL CONSULTING (DSC)",
       description: (
         <PostDefinitionList
           definitions={{
@@ -622,7 +622,7 @@ export default function Portfolio() {
         {/* Futur */}
         <section
           id="futur"
-          className={`${sectionClassNames} print:w-1/4 print:float-start`}
+          className={`${sectionClassNames}`}
           ref={navigableElementsRefs.futur}
         >
           <h2 className={`${sectionTitleClassNames}`}>
@@ -643,11 +643,11 @@ export default function Portfolio() {
         {/* Contact Section */}
         <section
           id="contact"
-          className={`${sectionClassNames} print:mb-40 print:w-1/2`}
+          className={`${sectionClassNames} print:mb-40`}
           ref={navigableElementsRefs.contact}
         >
           <h2 className={`${sectionTitleClassNames}`}>Get in Touch</h2>
-          <div className="flex justify-center space-x-6 text-stone-200 print:text-black print:grid print:grid-cols-3">
+          <div className="flex justify-center space-x-6 text-stone-200 print:text-black">
             <PrintableLink
               href="https://github.com/kane-thornwyrd"
               target="_blank"
