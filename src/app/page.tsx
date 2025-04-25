@@ -271,7 +271,10 @@ export default function Portfolio() {
       description: (
         <div className="relative">
           <div className="ambulance print:min-h-7">
-            <Ambulance size={32} className="print:float-end" />
+            <Ambulance
+              size={32}
+              className="w-full print:w-auto print:float-end"
+            />
           </div>
         </div>
       ),
@@ -846,16 +849,16 @@ const CVHeader = ({
       {isMenuOpen && (
         <nav className="relative md:hidmden backdrop-blur-md place-content-center text-center border-b-2 border-t-2 border-stone-50 -z-50 bg-gradient-to-b from-stone-200/60 to-stone-100/60  cursor-pointer">
           <a
-            onClick={navigateTo(navigableElementsRefs.experience)}
-            className="block px-4 py-5 hover:bg-stone-100"
-          >
-            Experience
-          </a>
-          <a
             onClick={navigateTo(navigableElementsRefs.skills)}
             className="block px-4 py-5 hover:bg-stone-100"
           >
             Skills
+          </a>
+          <a
+            onClick={navigateTo(navigableElementsRefs.experience)}
+            className="block px-4 py-5 hover:bg-stone-100"
+          >
+            Experience
           </a>
           {/* <a href="#projects" className="block px-4 py-5 hover:bg-stone-100">Projects</a> */}
           <a
@@ -893,9 +896,9 @@ const CVHeader = ({
 const PostDefinitionList: FC<{ definitions: Record<string, string[]> }> = ({
   definitions,
 }) => (
-  <dl className="columns-2 gap-4 print:columns-auto md:grid-cols-2 print:grid-cols-1 print:gap-0 print:border-none print:p-1">
+  <dl className="md:grid md:grid-cols-2 md:gap-4 print:columns-auto md:grid-cols-2 print:grid-cols-1 print:gap-0 print:border-none print:p-1">
     {Object.entries(definitions).map(([term, content], index) => (
-      <div key={index} className="my-4 aspect-video print:aspect-auto">
+      <div key={index}>
         <StickyFluoPaper className="bg-stone-200 print:bg-white">
           <dt className="text-xl font-thin text-stone-500 m-1 print:font-normal print:underline print:m-0">
             {term}
